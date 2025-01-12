@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public CharacterController controller; //Voir doc
 
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
  
     void Update()
     {
+        if (!IsOwner) return; //multi
         //Augmentation de la vitesse de la chute si le joueur n"estpas au sol
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
  
