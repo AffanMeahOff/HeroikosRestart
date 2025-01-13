@@ -9,6 +9,8 @@ public class SelectionManager : MonoBehaviour
     public GameObject interaction_Info_UI;
     Text interaction_text;
     private InteractableObject currentInteractableObject;
+    Ray ray;
+
 
     private void Start()
     {
@@ -17,7 +19,6 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        Ray ray;
         ray = new Ray();
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
