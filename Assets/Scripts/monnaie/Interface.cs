@@ -1,41 +1,44 @@
 using UnityEngine;
-using TMPro;  // Pour TextMeshPro
+using TMPro;
 
 public class Interface : argent
 {
     public TextMeshProUGUI DrachmesText;
-    
-    void Start()
+
+    private void Start()
     {
-        base.Start();
-        UpdateUI();     // Mettre à jour l'UI dès le début
+        // Appeler explicitement la méthode d'initialisation
+        InitialiserMontant();
+        UpdateUI();
     }
 
-    // mise à jour le texte de l'UI avec le montant actuel
-    void UpdateUI()
+    private void UpdateUI()
     {
-        DrachmesText.text = "Drachmes : " + Montant.ToString();
-    }
-
-    // Gagner des Drachmes et mettre à jour l'UI
-    public new void GagnerDrachmes(int valeur)
-    {
-        base.GagnerDrachmes(valeur);
-        UpdateUI();  // Mise à jour l'UI après un gain
-    }
-
-   
-    public new void PayerDrachmes(int valeur)
-    {
-        if (base.PayerDrachmes(valeur))
+        if (DrachmesText != null)
         {
-            UpdateUI();
+            DrachmesText.text = "Drachmes : " + Montant.ToString();
+        }
+        else
+        {
+            Debug.LogWarning("TextMeshProUGUI n'est pas assigné dans l'inspecteur.");
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ModifierDrachmes(int valeur)
     {
-        
+        GagnerDrachmes(valeur);
+        UpdateUI();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ModifierDrachmes(10);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ModifierDrachmes(-1);
+        }
     }
 }
