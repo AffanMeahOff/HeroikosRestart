@@ -13,7 +13,6 @@ public class Epee : Item
         Dégâts = 50;
         Durabilité = 25;
         ItemName = "Epée";
-        
     }
     private void Start()
     {
