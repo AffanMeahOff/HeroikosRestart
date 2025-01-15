@@ -15,11 +15,12 @@ public class SelectionManager : MonoBehaviour
     private void Start()
     {
         interaction_text = interaction_Info_UI.GetComponent<Text>();
+        ray = new Ray();
+
     }
 
     void Update()
     {
-        ray = new Ray();
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
