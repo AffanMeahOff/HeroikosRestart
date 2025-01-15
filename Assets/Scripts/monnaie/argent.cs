@@ -10,7 +10,7 @@ public class argent : MonoBehaviour
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Start()
+    protected virtual void Start()
     {
         montant = 0;
         Debug.Log("Bienvenue dans l'âge d'or des Drachmes ! Commencer à construire votre histoire avec" + montant + "Drachme(s).");

@@ -5,7 +5,7 @@ public class Interface : argent
 {
     public TextMeshProUGUI DrachmesText;
     
-    void Start()
+    protected override void Start()
     {
         base.Start();
         UpdateUI();     // Mettre à jour l'UI dès le début
