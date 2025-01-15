@@ -36,7 +36,7 @@ public class Interface : argent
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.m))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             ModifierDrachmes(10);
         }
