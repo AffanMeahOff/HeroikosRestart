@@ -7,9 +7,9 @@ public class PlayerButtonScripts : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.R))
         {
-            MenuPanneRov.SetActive(true);
+            MenuPanneRov.SetActive(!MenuPanneRov.activeSelf);
         }
         if(Input.GetKeyDown(KeyCode.F))
         {
