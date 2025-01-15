@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Item;
 
-public class Inventaire : MonoBehaviour
+public class Inventaire
 {
     public Item[][] inventaire;
 
