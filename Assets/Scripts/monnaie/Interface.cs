@@ -36,6 +36,19 @@ public class Interface : argent
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.m))
+        {
+            ModifierDrachmes(10);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ModifierDrachmes(-1);
+        }
+    }
+
+    public void ModifierDrachmes(int valeur)
+    {
+        montant += valeur;
+        UpdateUI();
     }
 }
