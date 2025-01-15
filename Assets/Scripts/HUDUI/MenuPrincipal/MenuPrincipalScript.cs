@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MenuPrincipalScript : MonoBehaviour
 {
     [SerializeField] Button StartNewGame;
-    [SerializeField] Button JoinGame;
+    [SerializeField] Button Multi;
 
     [SerializeField] Button LoadGame;
     [SerializeField] GameObject MultiplayerPannel;
@@ -15,7 +15,7 @@ public class MenuPrincipalScript : MonoBehaviour
     void Awake()
     {
         StartNewGame.onClick.AddListener(StartGame);
-        JoinGame.onClick.AddListener(MultiplayerPannelActivator);
+        Multi.onClick.AddListener(MultiplayerPannelActivator);
     }
 
     void StartGame()

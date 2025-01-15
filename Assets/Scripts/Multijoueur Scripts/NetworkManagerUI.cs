@@ -9,6 +9,12 @@ public class NetworkManagerUI : MonoBehaviour
     [SerializeField]private Button Server;
     [SerializeField]private Button HostButton; 
     [SerializeField]private Button ClientButton;
+    [SerializeField]private Button ReturnButton;
+    [SerializeField]private GameObject mainmenu;
+    [SerializeField]private GameObject camera;
+    [SerializeField]private GameObject camera2;
+
+
 
     private void Awake() 
     {
@@ -23,6 +29,14 @@ public class NetworkManagerUI : MonoBehaviour
         ClientButton.onClick.AddListener(() => 
         {
             NetworkManager.Singleton.StartClient();
+        });
+        ReturnButton.onClick.AddListener(() =>
+        {
+            mainmenu.SetActive(true);
+            camera.SetActive(false);
+            camera2.SetActive(true);
+
+            gameObject.SetActive(false); 
         });
 
     }
