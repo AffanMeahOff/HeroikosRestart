@@ -18,14 +18,14 @@ public class Interface : argent
     }
 
     // Gagner des Drachmes et mettre à jour l'UI
-    public void GagnerDrachmes(int valeur)
+    public new void GagnerDrachmes(int valeur)
     {
         base.GagnerDrachmes(valeur);
         UpdateUI();  // Mise à jour l'UI après un gain
     }
 
    
-    public void PayerDrachmes(int valeur)
+    public new void PayerDrachmes(int valeur)
     {
         if (base.PayerDrachmes(valeur))
         {
