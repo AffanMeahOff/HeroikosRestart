@@ -40,8 +40,8 @@ public class MouvementIADeBase : MonoBehaviour
             }
             else 
             {
-                float NewX = Random.Range(-4f, 4f);
-                float NewZ = Random.Range(-4f, 4f);
+                float NewX = Random.Range(-12f, 12f);
+                float NewZ = Random.Range(-12f, 12f);
 
                 move = new Vector3(transform.position.x + NewX, transform.position.y, transform.position.z + NewZ);
             }
