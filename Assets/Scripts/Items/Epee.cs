@@ -8,8 +8,12 @@ public class Epee : Item
 {
     
     public GameObject Longsword;
+    public int Dégâts;
+    public int Durabilité;
     private void Awake()
     {
+        id = 7;
+        value = 6;
         Dégâts = 50;
         Durabilité = 25;
         ItemName = "Epée";
