@@ -5,15 +5,17 @@ using UnityEngine.UI;
 public class MenuPrincipalScript : MonoBehaviour
 {
     [SerializeField] Button StartNewGame;
-    [SerializeField] Button Multiplayer;
+    [SerializeField] Button JoinGame;
 
     [SerializeField] Button LoadGame;
     [SerializeField] GameObject MultiplayerPannel;
+    [SerializeField] GameObject Camera;
+
 
     void Awake()
     {
         StartNewGame.onClick.AddListener(StartGame);
-        Multiplayer.onClick.AddListener(MultiplayerPannelActivator);
+        JoinGame.onClick.AddListener(MultiplayerPannelActivator);
     }
 
     void StartGame()
@@ -24,6 +26,7 @@ public class MenuPrincipalScript : MonoBehaviour
     void MultiplayerPannelActivator()
     {
         MultiplayerPannel.SetActive(true);
+        Camera.SetActive(false);
         gameObject.SetActive(false);
     }
 }

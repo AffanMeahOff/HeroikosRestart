@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class PlayerButtonScripts : MonoBehaviour
 {
-    [SerializeField]private GameObject MenuPannel;
+    [SerializeField]private GameObject MenuPanneRov;
     [SerializeField]private GameObject epee;
 
-
-    // Update is called once per frame
-    void Awake()
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            MenuPannel.SetActive(true);
+            MenuPanneRov.SetActive(true);
         }
         if(Input.GetKeyDown(KeyCode.F))
         {
