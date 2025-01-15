@@ -13,7 +13,7 @@ public class PlayerButtonScripts : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F))
         {
-            epee.SetActive(true);
+            epee.SetActive(!epee.activeSelf);
         }
     }
 }
