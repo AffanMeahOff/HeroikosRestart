@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 23603817308993686}
   - component: {fileID: 8773753805153309119}
   - component: {fileID: 1898350612050585458}
-  - component: {fileID: -9219060041000470180}
   - component: {fileID: 136333614842697916}
   m_Layer: 0
   m_Name: storage_jug
@@ -115,22 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c34d256a5db8447a255aac87be2d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1714253030691962}
---- !u!114 &-9219060041000470180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714253030691962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8579b3b535c43d2409ddda091eeb728e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   id: 0
-  ItemName: Jar
-  value: 3
+  ItemName: jar
+  price: 3
 --- !u!136 &136333614842697916
 CapsuleCollider:
   m_ObjectHideFlags: 0

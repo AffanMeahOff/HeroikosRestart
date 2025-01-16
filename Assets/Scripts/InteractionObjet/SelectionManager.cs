@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SelectionManager : MonoBehaviour
 {
     public GameObject interaction_Info_UI;
-    public Text interaction_text;
+    Text interaction_text;
     private InteractableObject currentInteractableObject;
     Ray ray;
     RaycastHit hit;
