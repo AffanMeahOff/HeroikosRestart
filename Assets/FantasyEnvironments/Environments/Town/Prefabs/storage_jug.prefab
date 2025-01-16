@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4286209532176036}
   - component: {fileID: 33933282723719762}
   - component: {fileID: 6325516544113195764}
+  - component: {fileID: 7464068914074847685}
+  - component: {fileID: 5267665423549849617}
   - component: {fileID: 23603817308993686}
   - component: {fileID: 136333614842697916}
   m_Layer: 0
@@ -56,6 +58,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Jar
+--- !u!114 &7464068914074847685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714253030691962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c34d256a5db8447a255aac87be2d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+--- !u!114 &5267665423549849617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714253030691962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d3ce611a9ff1448bd586fc2b0192bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction_Info_UI: {fileID: 0}
 --- !u!23 &23603817308993686
 MeshRenderer:
   m_ObjectHideFlags: 0

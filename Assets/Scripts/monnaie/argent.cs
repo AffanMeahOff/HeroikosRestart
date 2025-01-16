@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class argent : MonoBehaviour
 {
-    private int montant;
+    private int montant; // Utilisation de private pour un meilleur encapsulage
 
-    public int Montant
-    {
-        get{return montant;}
-    }
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int Montant => montant; // Propriété publique pour accéder au montant
+
+    // Nouvelle méthode d'initialisation
+    protected void InitialiserMontant()
     {
         montant = 0;
-        Debug.Log("Bienvenue dans l'âge d'or des Drachmes ! Commencer à construire votre histoire avec" + montant + "Drachme(s).");
+        Debug.Log("Bienvenue dans l'âge d'or des Drachmes ! Montant initialisé à " + montant + " Drachmes.");
     }
 
     public void GagnerDrachmes(int valeur)
@@ -28,31 +25,24 @@ public class argent : MonoBehaviour
             Debug.LogWarning("Impossible de gagner une valeur négative ou nulle.");
         }
     }
-    
+
     public bool PayerDrachmes(int valeur)
     {
-       if (PeutPayer(valeur))
-       { 
-           montant -= valeur; 
-           Debug.Log($"Vous avez payé {valeur} Drachme(s). Nouveau total : {montant} Drachmes."); 
-           return true;
-       }
-       else 
-       { 
-           Debug.LogWarning($"Fonds insuffisants ! Vous avez seulement {montant} Drachme(s)."); 
-           return false; 
-       }
-      
+        if (PeutPayer(valeur))
+        {
+            montant -= valeur;
+            Debug.Log($"Vous avez payé {valeur} Drachmes. Nouveau total : {montant} Drachmes.");
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning($"Fonds insuffisants ! Vous avez seulement {montant} Drachmes.");
+            return false;
+        }
     }
-    
+
     private bool PeutPayer(int valeur)
     {
         return montant >= valeur;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
