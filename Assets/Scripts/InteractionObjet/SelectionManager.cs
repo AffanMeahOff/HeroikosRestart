@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SelectionManager : MonoBehaviour
 {
     public GameObject interaction_Info_UI;
-    Text interaction_text;
+    public Text interaction_text;
     private InteractableObject currentInteractableObject;
     Ray ray;
     RaycastHit hit;
@@ -16,7 +16,6 @@ public class SelectionManager : MonoBehaviour
 
     private void Start()
     {
-        interaction_text = interaction_Info_UI.GetComponent<Text>();
         ray = new Ray();
         hit = new RaycastHit();
     }
@@ -32,11 +31,12 @@ public class SelectionManager : MonoBehaviour
 
             if (selectionTransform.GetComponent<InteractableObject>())
             {
-                interaction_text.text = interactableObject.GetItemName();
+                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
                 interaction_Info_UI.SetActive(true);
+                
                 currentInteractableObject = interactableObject;
 
-                if (Input.GetKeyDown(KeyCode.E)) // Appuyez sur E pour ramasser
+                if (Input.GetKeyDown(KeyCode.P)) // Appuyez sur E pour ramasser
                 {
                     PickUpObject(currentInteractableObject);
                 }
