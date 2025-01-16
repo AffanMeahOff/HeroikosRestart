@@ -7,19 +7,19 @@ using UnityEngine.UI;
 public class InventaireManager : MonoBehaviour
 {
     public static InventaireManager Instance;
-    public List<Item> Items = new List<Item>();
+    public List<GameObject> Items = new List<GameObject>();
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void Add(Item item)
+    public void Add(GameObject item)
     {
         Items.Add(item);
     }
 
-    public void Remove(Item item)
+    public void Remove(GameObject item)
     {
         Items.Remove(item);
     }

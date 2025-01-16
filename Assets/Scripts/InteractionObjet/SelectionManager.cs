@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -63,8 +64,17 @@ public class SelectionManager : MonoBehaviour
         if (interactableObject != null)
         {
             // Logique pour ramasser l'objet, par exemple l'ajouter à l'inventaire
-            Debug.Log("Picked Up : " + interactableObject.GetItemName());
+            string name = interactableObject.GetItemName();
+            Debug.Log("Picked Up : " + name);
             // Vous pouvez soit désactiver l'objet
+
+            if (interactableObject.gameObject is GameObject item)
+            {
+                string nom = interactableObject.GetItemName();
+                if(nom == "Jar") InventaireManager.Instance.Add(item);
+            }
+
+
             interactableObject.gameObject.SetActive(false);
             // Ou le détruire
             // Destroy(interactableObject.gameObject);
