@@ -60,7 +60,6 @@ public class SelectionManager : MonoBehaviour
         {
             // Logique pour ramasser l'objet, par exemple l'ajouter à l'inventaire
             Debug.Log("Ramassé : " + interactableObject.GetItemName());
-            InventaireManager.Instance.Add(Item);
             // Vous pouvez soit désactiver l'objet
             interactableObject.gameObject.SetActive(false);
             // Ou le détruire
