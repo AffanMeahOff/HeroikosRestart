@@ -8,21 +8,19 @@ public class SelectionManager : MonoBehaviour
 {
     public GameObject interaction_Info_UI;
     Text interaction_text;
-    private InteractableObject currentInteractableObject;
-    Ray ray;
-    RaycastHit hit;
 
+    private InteractableObject currentInteractableObject;
     public Camera Camera;
 
     private void Start()
     {
-        ray = new Ray();
-        hit = new RaycastHit();
-    }
+        interaction_text = interaction_Info_UI.GetComponent<Text>();
+    }   
 
     void Update()
     {
-        ray = Camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -49,7 +47,6 @@ public class SelectionManager : MonoBehaviour
         }
         else
         {
-            interaction_Info_UI.SetActive(false);
             currentInteractableObject = null;
         }
     }
