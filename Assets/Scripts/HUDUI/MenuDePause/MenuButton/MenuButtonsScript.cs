@@ -27,7 +27,6 @@ public class MenuButtonsScript : MonoBehaviour
         {
             gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked; //Pour eviter de sorir de l'ecran
-
         });
 
         MultiButton.onClick.AddListener(() => 

@@ -7,39 +7,9 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-   public int id
-   {
-        get
-        {
-            return id;
-        }
-        set
-        {
-            id = value;
-        }
-    }
-    public string ItemName
-    {
-        get
-        {
-            return ItemName;
-        }
-        set
-        {
-            ItemName = value;
-        }
-    }
-    public int price
-    {
-        get
-        {
-            return price;
-        }
-        set
-        {
-            price = value;
-        }
-    }
+   public int id;
+    public string ItemName;
+    public int price;
 
     public Item(int ID, string name, int Price)
     {

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4286209532176036}
   - component: {fileID: 33933282723719762}
-  - component: {fileID: 6325516544113195764}
-  - component: {fileID: 7464068914074847685}
-  - component: {fileID: 5267665423549849617}
   - component: {fileID: 23603817308993686}
+  - component: {fileID: 8773753805153309119}
+  - component: {fileID: 1898350612050585458}
+  - component: {fileID: -9219060041000470180}
   - component: {fileID: 136333614842697916}
   m_Layer: 0
   m_Name: storage_jug
@@ -45,45 +45,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714253030691962}
   m_Mesh: {fileID: 4300000, guid: 5a7bda7a7721c4547a1f2a5c453c46fb, type: 3}
---- !u!114 &6325516544113195764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714253030691962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemName: Jar
---- !u!114 &7464068914074847685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714253030691962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c34d256a5db8447a255aac87be2d26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
---- !u!114 &5267665423549849617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714253030691962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d3ce611a9ff1448bd586fc2b0192bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction_Info_UI: {fileID: 0}
 --- !u!23 &23603817308993686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -129,6 +90,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8773753805153309119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714253030691962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Jar
+--- !u!114 &1898350612050585458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714253030691962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c34d256a5db8447a255aac87be2d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1714253030691962}
+--- !u!114 &-9219060041000470180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714253030691962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8579b3b535c43d2409ddda091eeb728e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  ItemName: Jar
+  value: 3
 --- !u!136 &136333614842697916
 CapsuleCollider:
   m_ObjectHideFlags: 0
