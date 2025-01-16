@@ -10,19 +10,21 @@ public class SelectionManager : MonoBehaviour
     Text interaction_text;
     private InteractableObject currentInteractableObject;
     Ray ray;
+    RaycastHit hit;
 
+    public Camera Camera;
 
     private void Start()
     {
         interaction_text = interaction_Info_UI.GetComponent<Text>();
         ray = new Ray();
-
+        hit = new RaycastHit();
     }
 
     void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        ray = Camera.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out hit))
         {
             var selectionTransform = hit.transform;

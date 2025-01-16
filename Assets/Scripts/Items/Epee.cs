@@ -10,10 +10,14 @@ public class Epee : Item
     public GameObject Longsword;
     public int Dégâts;
     public int Durabilité;
+    public Epee (int id, string name, int price) : base (id, name, price)
+    {
+
+    }
     private void Awake()
     {
-        id = 7;
-        value = 6;
+        id = 1;
+        price = 6;
         Dégâts = 50;
         Durabilité = 25;
         ItemName = "Epée";

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : Item
 {
-    public Item item;
-    
-
+    public ItemManager(int id, string name, int price) : base(id , name , price )
+    {
+        
+    }
 }

@@ -9,7 +9,14 @@ public class Item : MonoBehaviour
 {
    public int id;
     public string ItemName;
-    public int value;
+    public int price;
+
+    public Item(int ID, string name, int Price)
+    {
+        id = ID;
+        ItemName = name;
+        price = Price;
+    }
     private void Awake()
     {
         
