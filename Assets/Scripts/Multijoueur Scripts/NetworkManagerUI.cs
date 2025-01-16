@@ -13,6 +13,8 @@ public class NetworkManagerUI : MonoBehaviour
     [SerializeField]private GameObject mainmenu;
     [SerializeField]private GameObject camera;
     [SerializeField]private GameObject camera2;
+//    [SerializeField]private GameObject camera2;
+
 
 
 
@@ -21,10 +23,12 @@ public class NetworkManagerUI : MonoBehaviour
         Server.onClick.AddListener (() => 
         {
             NetworkManager.Singleton.StartServer();
+            gameObject.SetActive(false);
         });
         HostButton.onClick.AddListener(()=> 
         {
             NetworkManager.Singleton.StartHost();
+            gameObject.SetActive(false);
         });
         ClientButton.onClick.AddListener(() => 
         {

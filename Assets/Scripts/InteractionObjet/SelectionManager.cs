@@ -8,35 +8,37 @@ public class SelectionManager : MonoBehaviour
 {
     public GameObject interaction_Info_UI;
     Text interaction_text;
-    private InteractableObject currentInteractableObject;
-    Ray ray;
-    RaycastHit hit;
 
+    private InteractableObject currentInteractableObject;
     public Camera Camera;
+
 
     private void Start()
     {
-        ray = new Ray();
-        hit = new RaycastHit();
-    }
+        interaction_text = interaction_Info_UI.GetComponent<Text>();
+    }   
 
     void Update()
-    {
-        ray = Camera.ScreenPointToRay(Input.mousePosition);
+{
+    Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+    RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+    if (Physics.Raycast(ray, out hit))
+    {
+        var selectionTransform = hit.transform;
+
+        if (selectionTransform != null)
         {
-            var selectionTransform = hit.transform;
             var interactableObject = selectionTransform.GetComponent<InteractableObject>();
 
-            if (selectionTransform.GetComponent<InteractableObject>())
+            if (interactableObject != null)
             {
-                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
                 interaction_Info_UI.SetActive(true);
-                
+
+                //interaction_text.text = interactableObject.GetItemName();
                 currentInteractableObject = interactableObject;
 
-                if (Input.GetKeyDown(KeyCode.P)) // Appuyez sur E pour ramasser
+                if (Input.GetKeyDown(KeyCode.P)) // Appuyez sur P pour ramasser
                 {
                     PickUpObject(currentInteractableObject);
                 }
@@ -47,19 +49,21 @@ public class SelectionManager : MonoBehaviour
                 currentInteractableObject = null;
             }
         }
-        else
-        {
-            interaction_Info_UI.SetActive(false);
-            currentInteractableObject = null;
-        }
     }
+    else
+    {
+        interaction_Info_UI.SetActive(false);
+        currentInteractableObject = null;
+    }
+}
+
 
     void PickUpObject(InteractableObject interactableObject)
     {
         if (interactableObject != null)
         {
             // Logique pour ramasser l'objet, par exemple l'ajouter à l'inventaire
-            Debug.Log("Ramassé : " + interactableObject.GetItemName());
+            Debug.Log("Picked Up : " + interactableObject.GetItemName());
             // Vous pouvez soit désactiver l'objet
             interactableObject.gameObject.SetActive(false);
             // Ou le détruire
