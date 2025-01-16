@@ -15,6 +15,9 @@ public class MenuButtonsScript : MonoBehaviour
 
     //les menus
 
+    [SerializeField]private GameObject EnJeu;
+
+
     [SerializeField]private GameObject Map;
 
     [SerializeField]private GameObject MenuPrincipal;
@@ -25,6 +28,7 @@ public class MenuButtonsScript : MonoBehaviour
     {
         Resume.onClick.AddListener(() =>
         {
+            EnJeu.SetActive(true);
             gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked; //Pour eviter de sorir de l'ecran
         });

@@ -3721,6 +3721,7 @@ MonoBehaviour:
   ExitButton: {fileID: 6674130055262713577}
   Resume: {fileID: 7527419192579282003}
   Return: {fileID: 4884025232783267358}
+  EnJeu: {fileID: 630324731220679068}
   Map: {fileID: 3233673074639350321}
   MenuPrincipal: {fileID: 0}
   MultijoueurSettings: {fileID: 6443953808621704554}

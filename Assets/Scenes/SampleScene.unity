@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 127.0.0.1
+    Address: 10.3.138.100
     Port: 7777
     ServerListenAddress: 127.0.0.1
   DebugSimulator:
@@ -6178,51 +6178,6 @@ MonoBehaviour:
   m_Spacing: {x: 4.5, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 3
---- !u!1 &1822544619
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1822544621}
-  - component: {fileID: 1822544620}
-  m_Layer: 0
-  m_Name: SelectionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1822544620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822544619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d3ce611a9ff1448bd586fc2b0192bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction_Info_UI: {fileID: 774819728}
---- !u!4 &1822544621
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822544619}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 509.43973, y: 195.8832, z: -52.075886}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1830879059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7837,7 +7792,6 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1169369765}
   - {fileID: 328157542}
-  - {fileID: 1822544621}
   - {fileID: 1031550221}
   - {fileID: 1230557013}
   - {fileID: 34618009}
