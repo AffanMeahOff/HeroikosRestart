@@ -10,10 +10,30 @@ public class ScriptTemporaire : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            menudepause.SetActive(!menudepause.activeSelf);  
-            Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
-          
+            menudepause.SetActive(true);
+            if (menudepause.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            menudepause.SetActive(false);
+            if (menudepause.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
+          
+    
         if(Input.GetKeyDown(KeyCode.E))
         {
             menuinventaire.SetActive(!menuinventaire.activeSelf);  
