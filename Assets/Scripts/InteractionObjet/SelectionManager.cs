@@ -10,17 +10,17 @@ public class SelectionManager : MonoBehaviour
     Text interaction_text;
     private InteractableObject currentInteractableObject;
     Ray ray;
+    public Item Item;
 
 
     private void Start()
     {
         interaction_text = interaction_Info_UI.GetComponent<Text>();
-        ray = new Ray();
-
     }
 
     void Update()
     {
+        ray = new Ray();
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -58,6 +58,7 @@ public class SelectionManager : MonoBehaviour
         {
             // Logique pour ramasser l'objet, par exemple l'ajouter à l'inventaire
             Debug.Log("Ramassé : " + interactableObject.GetItemName());
+            InventaireManager.Instance.Add(Item);
             // Vous pouvez soit désactiver l'objet
             interactableObject.gameObject.SetActive(false);
             // Ou le détruire
