@@ -29,6 +29,14 @@ public class MouvementIADeBase : MonoBehaviour
         {
             GenererNouvelleDestination();
         }
+
+        Vector3 direction = move - transform.position;
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            targetRotation *= Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, vitesse * 100 * Time.deltaTime);
+        }
     }
 
     void GenererNouvelleDestination()
@@ -46,7 +54,8 @@ public class MouvementIADeBase : MonoBehaviour
                 float pente = Vector3.Angle(hit.normal, Vector3.up);
                 if (pente <= 45f)
                 {
-                    move = hit.point + Vector3.up * 0.2f;
+                    float objectHeight = GetComponent<Collider>().bounds.extents.y;
+                    move = new Vector3(hit.point.x, hit.point.y + objectHeight, hit.point.z);
                     return;
                 }
             }
