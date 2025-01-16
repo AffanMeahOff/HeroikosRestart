@@ -7,7 +7,6 @@ public class Interface : argent
     
     void Start()
     {
-        base.Start();
         UpdateUI();     // Mettre à jour l'UI dès le début
     }
 
