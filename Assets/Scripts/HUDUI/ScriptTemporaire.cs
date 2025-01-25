@@ -1,39 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScriptTemporaire : MonoBehaviour
 {
-
-    [SerializeField]private GameObject menudepause;
     [SerializeField]private GameObject menuinventaire;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.Tab))
         {
-            menudepause.SetActive(true);
-            if (menudepause.activeSelf)
-            {
-                Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+            Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
+            SceneManager.LoadSceneAsync(3);
         }
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            menudepause.SetActive(false);
-            if (menudepause.activeSelf)
-            {
-                Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-        }
-          
-    
+
         if(Input.GetKeyDown(KeyCode.E))
         {
             menuinventaire.SetActive(!menuinventaire.activeSelf);  
