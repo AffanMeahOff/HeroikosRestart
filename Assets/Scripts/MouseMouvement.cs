@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class MouseMovement : MonoBehaviour //Voir la doc que j'ai faite
+public class MouseMovement : NetworkBehaviour //Voir la doc que j'ai faite
 {
- 
+
     public float mouseSensitivity = 1500f; //Reglage de la Sensi (en variable public)
  
     float xRotation = 0f; //Initialisation de la souris ur l'axe x
@@ -17,6 +18,11 @@ public class MouseMovement : MonoBehaviour //Voir la doc que j'ai faite
  
     void Update() //A chaque update ou par frame plutot
     {
+        if(!IsOwner)
+        {
+          return;
+        }
+        
        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime; //Intensité
        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime; //Optimisationn et fluidité
  

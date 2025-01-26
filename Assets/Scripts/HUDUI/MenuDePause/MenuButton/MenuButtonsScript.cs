@@ -17,7 +17,6 @@ public class MenuButtonsScript : MonoBehaviour
 
     [SerializeField]private GameObject EnJeu;
 
-
     [SerializeField]private GameObject Map;
 
     [SerializeField]private GameObject MenuPrincipal;
