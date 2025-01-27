@@ -11,7 +11,7 @@ public class SelectionManager : MonoBehaviour
 
     private InteractableObject currentInteractableObject;
     public Camera Camera;
-
+    public GameObject NameObject;
 
     private void Start()
     {
@@ -55,6 +55,11 @@ public class SelectionManager : MonoBehaviour
         interaction_Info_UI.SetActive(false);
         currentInteractableObject = null;
     }
+
+    if(Input.GetKeyUp(KeyCode.P))
+    {
+        NameObject.SetActive(true);
+    }
 }
 
 
@@ -70,7 +75,12 @@ public class SelectionManager : MonoBehaviour
             if (interactableObject.gameObject is GameObject item)
             {
                 string nom = interactableObject.GetItemName();
-                if(nom == "Jar") InventaireManager.Instance.Add(item);
+                if(nom == "Jar") 
+                {
+                    InventaireManager.Instance.Add(item);
+                
+                }
+                
             }
 
 
