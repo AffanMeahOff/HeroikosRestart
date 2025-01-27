@@ -10,11 +10,12 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void MultiplayerPannel() 
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
     }
     public void ReturnToGame() 
     {
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene(1);
     }
+
 }
