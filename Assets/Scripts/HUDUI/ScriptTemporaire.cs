@@ -8,7 +8,7 @@ public class ScriptTemporaire : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
+            Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
             SceneManager.LoadSceneAsync(3);
         }
 
@@ -17,7 +17,7 @@ public class ScriptTemporaire : MonoBehaviour
             menuinventaire.SetActive(!menuinventaire.activeSelf);  
             if (menuinventaire.activeSelf)
             {
-                Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
+                Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
             }
             else
             {
