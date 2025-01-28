@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class InventaireManager : MonoBehaviour
 {
     public static InventaireManager Instance;
+    public GameObject itemButton;
     public List<GameObject> Items = new List<GameObject>();
 
     private void Awake()
@@ -14,9 +15,13 @@ public class InventaireManager : MonoBehaviour
         Instance = this;
     }
 
+
+
     public void Add(GameObject item)
     {
+        
         Items.Add(item);
+        GameObject GObject = Instantiate(itemButton);
     }
 
     public void Remove(GameObject item)
