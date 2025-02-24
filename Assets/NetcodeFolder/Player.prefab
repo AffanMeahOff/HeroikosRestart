@@ -2637,6 +2637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itembutton: {fileID: 0}
+  ItemContent: {fileID: 0}
+  InventoryItem: {fileID: 0}
   Items: []
 --- !u!1 &3542713046564389239
 GameObject:
@@ -6285,7 +6287,6 @@ GameObject:
   - component: {fileID: 5214435372381800950}
   - component: {fileID: 2941522844174381245}
   - component: {fileID: 207489347925925093}
-  - component: {fileID: 1071754655923549603}
   m_Layer: 5
   m_Name: Inventaire
   m_TagString: Untagged
@@ -6381,21 +6382,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1071754655923549603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8272537263132145602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d3ce611a9ff1448bd586fc2b0192bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction_Info_UI: {fileID: 0}
-  Camera: {fileID: 0}
-  NameObject: {fileID: 0}
 --- !u!1 &8404128488568940789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6936,6 +6922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itembutton: {fileID: 8751553774167245235, guid: 99385410b51aea24d9cbe4dc13568c9b, type: 3}
+  ItemContent: {fileID: 6533057666295276300}
+  InventoryItem: {fileID: 0}
   Items: []
 --- !u!114 &2872807674567155067
 MonoBehaviour:
@@ -6950,6 +6938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itembutton: {fileID: 8751553774167245235, guid: 99385410b51aea24d9cbe4dc13568c9b, type: 3}
+  ItemContent: {fileID: 6533057666295276300}
 --- !u!1 &9027337402163097763
 GameObject:
   m_ObjectHideFlags: 0

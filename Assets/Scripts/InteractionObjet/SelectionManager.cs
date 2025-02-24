@@ -72,15 +72,10 @@ public class SelectionManager : MonoBehaviour
             Debug.Log("Picked Up : " + name);
             // Vous pouvez soit désactiver l'objet
 
-            if (interactableObject.gameObject is GameObject item)
+            GameObject item = interactableObject.gameObject;
+            if (name == "Jar")
             {
-                string nom = interactableObject.GetItemName();
-                if(nom == "Jar") 
-                {
-                    InventaireManager.Instance.Add(item);
-                
-                }
-                
+                InventaireManager.Instance?.Add(item);
             }
 
 

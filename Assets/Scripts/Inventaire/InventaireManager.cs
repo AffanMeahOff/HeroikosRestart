@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,45 +5,63 @@ using UnityEngine.UI;
 public class InventaireManager : MonoBehaviour
 {
     public static InventaireManager Instance;
-    //public GameObject InventoryItem;
-    public GameObject itembutton;
-    //public Transform ItemContent;
+
+    public GameObject itembutton; // Bouton représentant l'item dans l'UI
+    public Transform ItemContent; // Conteneur des items dans l'inventaire UI
+    public GameObject InventoryItem; // Préfab d'un item affiché dans l'inventaire
     public List<GameObject> Items = new List<GameObject>();
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
-
 
     public void Add(GameObject item)
     {
-        
+        if (item == null) return;
+
         Items.Add(item);
-        Debug.Log("Added to list");
-        GameObject ItemButton = Instantiate(itembutton);
+        Debug.Log("Added to list: " + item.name);
+
+        // Ajoute un bouton d'item dans l'inventaire UI
+        GameObject ItemButton = Instantiate(itembutton, ItemContent);
     }
 
     public void Remove(GameObject item)
     {
-        Items.Remove(item);
+        if (Items.Contains(item))
+        {
+            Items.Remove(item);
+        }
     }
 
-    /*public void ListItems()
+    public void ListItems()
     {
-        //Pour éviter que les items ne se multiplient à chaque ouverture de l'inventaire
-        foreach(Transform item in ItemContent)
+        if (ItemContent == null) return;
+
+        // Nettoyer les items existants pour éviter la duplication
+        foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
         }
-        foreach(var item in Items)
+
+        // Ajouter chaque item de la liste dans l'inventaire UI
+        foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            itemName.text = "filler name";
+            var itemName = obj.transform.Find("ItemName")?.GetComponent<Text>();
 
+            if (itemName != null)
+            {
+                itemName.text = item.name; // Mettre le vrai nom de l'item
+            }
         }
     }
-    */
 }
