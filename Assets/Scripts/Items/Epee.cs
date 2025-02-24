@@ -10,7 +10,7 @@ public class Epee : Item
     public GameObject Longsword;
     public int Dégâts;
     public int Durabilité;
-    public Epee (int id, string name, int price) : base (id, name, price)
+    public Epee (int id, string name, int price, int maxStack) : base (id, name, price, maxStack)
     {
 
     }

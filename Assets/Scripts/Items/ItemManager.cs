@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ItemManager : Item
 {
-    public ItemManager(int id, string name, int price) : base(id , name , price )
+    public ItemManager(int id, string name, int price, int maxStack) : base(id , name , price, maxStack )
     {
         
     }

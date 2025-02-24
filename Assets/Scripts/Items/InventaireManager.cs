@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using InventaireItem;
 
 /*
 public class InventaireManager : MonoBehaviour
@@ -84,6 +83,7 @@ public class InventaireManager : MonoBehaviour
             if (invItem.item == item && invItem.quantity < item.maxStack)
             {
                 invItem.quantity += quantity;
+                Debug.Log($"Ajouté: {item.itemName} (Quantité: {invItem.quantity})");
                 return true;
             }
         }
@@ -91,6 +91,7 @@ public class InventaireManager : MonoBehaviour
         if (items.Count < maxSlots)
         {
             items.Add(new InventaireItem(item, quantity));
+            Debug.Log($"Nouveau: {item.itemName} ajouté à l'inventaire.");
             return true;
         }
 

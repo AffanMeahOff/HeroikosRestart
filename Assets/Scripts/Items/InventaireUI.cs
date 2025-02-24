@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class InventaireUI : MonoBehaviour
 {
-    public Inventaire inventory;
+    public InventaireManager inventory;
     public GameObject inventorySlotPrefab;
     public Transform inventoryPanel;
 
@@ -15,6 +15,7 @@ public class InventaireUI : MonoBehaviour
 
     public void UpdateUI()
     {
+        Debug.Log("Mise à jour de l'inventaire UI...");
         foreach (Transform child in inventoryPanel)
         {
             Destroy(child.gameObject);

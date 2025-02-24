@@ -12,6 +12,7 @@ public class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = true;
+            Debug.Log("🔹 Appuyez sur P pour ramasser " + itemData.itemName);
         }
     }
 
@@ -28,7 +29,7 @@ public class PickupItem : MonoBehaviour
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.P))
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            Inventory inventory = player.GetComponent<Inventory>();
+            InventaireManager inventory = player.GetComponent<InventaireManager>();
 
             if (inventory != null && inventory.AddItem(itemData, quantity))
             {
@@ -36,4 +37,6 @@ public class PickupItem : MonoBehaviour
             }
         }
     }
+
+
 }
