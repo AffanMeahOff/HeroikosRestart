@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using InventaireItem;
 
+/*
 public class InventaireManager : MonoBehaviour
 {
+    
     public static InventaireManager Instance;
 
     public GameObject itembutton; // Bouton représentant l'item dans l'UI
@@ -62,6 +65,46 @@ public class InventaireManager : MonoBehaviour
             {
                 itemName.text = item.name; // Mettre le vrai nom de l'item
             }
+        }
+    }
+    
+
+}
+*/
+
+public class InventaireManager : MonoBehaviour
+{
+    public List<InventaireItem> items = new List<InventaireItem>();
+    public int maxSlots = 10;
+
+    public bool AddItem(ItemData item, int quantity)
+    {
+        foreach (InventaireItem invItem in items)
+        {
+            if (invItem.item == item && invItem.quantity < item.maxStack)
+            {
+                invItem.quantity += quantity;
+                return true;
+            }
+        }
+
+        if (items.Count < maxSlots)
+        {
+            items.Add(new InventaireItem(item, quantity));
+            return true;
+        }
+
+        return false;
+    }
+
+    public void RemoveItem(ItemData item, int quantity)
+    {
+        InventaireItem invItem = items.Find(i => i.item == item);
+        if (invItem != null)
+        {
+            invItem.quantity -= quantity;
+            if (invItem.quantity <= 0)
+                items.Remove(invItem);
         }
     }
 }

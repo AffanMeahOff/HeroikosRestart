@@ -13,56 +13,60 @@ public class SelectionManager : MonoBehaviour
     public Camera Camera;
     public GameObject NameObject;
 
+    
+
     private void Start()
     {
         interaction_text = interaction_Info_UI.GetComponent<Text>();
     }   
 
     void Update()
-{
-    Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
-    RaycastHit hit;
-
-    if (Physics.Raycast(ray, out hit))
     {
-        var selectionTransform = hit.transform;
+        Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        if (selectionTransform != null)
+        if (Physics.Raycast(ray, out hit))
         {
-            var interactableObject = selectionTransform.GetComponent<InteractableObject>();
+            var selectionTransform = hit.transform;
 
-            if (interactableObject != null)
+            if (selectionTransform != null)
             {
-                interaction_Info_UI.SetActive(true);
+                var interactableObject = selectionTransform.GetComponent<InteractableObject>();
 
-                //interaction_text.text = interactableObject.GetItemName();
-                currentInteractableObject = interactableObject;
-
-                if (Input.GetKeyDown(KeyCode.P)) // Appuyez sur P pour ramasser
+                if (interactableObject != null)
                 {
-                    PickUpObject(currentInteractableObject);
+                    interaction_Info_UI.SetActive(true);
+
+                    //interaction_text.text = interactableObject.GetItemName();
+                    currentInteractableObject = interactableObject;
+                    /*
+                    if (Input.GetKeyDown(KeyCode.P)) // Appuyez sur P pour ramasser
+                    {
+                        PickUpObject(currentInteractableObject);
+                    }
+                    */
+                }
+                else
+                {
+                    interaction_Info_UI.SetActive(false);
+                    currentInteractableObject = null;
                 }
             }
-            else
-            {
-                interaction_Info_UI.SetActive(false);
-                currentInteractableObject = null;
-            }
+        }
+        else
+        {
+            interaction_Info_UI.SetActive(false);
+            currentInteractableObject = null;
+        }
+
+        if(Input.GetKeyUp(KeyCode.P))
+        {
+            NameObject.SetActive(true);
         }
     }
-    else
-    {
-        interaction_Info_UI.SetActive(false);
-        currentInteractableObject = null;
-    }
 
-    if(Input.GetKeyUp(KeyCode.P))
-    {
-        NameObject.SetActive(true);
-    }
-}
-
-
+    
+    /*
     void PickUpObject(InteractableObject interactableObject)
     {
         if (interactableObject != null)
@@ -84,4 +88,5 @@ public class SelectionManager : MonoBehaviour
             // Destroy(interactableObject.gameObject);
         }
     }
+    */
 } 

@@ -41,11 +41,24 @@ public class Item : MonoBehaviour
         }
     }
 
-    public Item(int ID, string name, int Price)
+    public int maxstack
+    {
+        get
+        {
+            return maxstack;
+        }
+        set
+        {
+            maxstack = value;
+        }
+    }
+
+    public Item(int ID, string name, int Price, int Maxstack)
     {
         id = ID;
         ItemName = name;
         price = Price;
+        maxstack = Maxstack;
     }
     private void Awake()
     {
