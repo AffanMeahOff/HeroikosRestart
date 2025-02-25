@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baa9dd8e5fc64341a28b8aa0fb567e7, type: 3}
   m_Name: NewItem
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Jarre
   icon: {fileID: 0}
-  maxStack: 0
+  maxStack: 1
