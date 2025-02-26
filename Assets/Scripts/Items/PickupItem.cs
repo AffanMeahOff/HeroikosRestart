@@ -12,7 +12,7 @@ public class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = true;
-            Debug.Log("🔹 Appuyez sur P pour ramasser " + itemData.itemName);
+            Debug.Log("🔹 Joueur détecté près de " + gameObject.name);
         }
     }
 
@@ -21,6 +21,7 @@ public class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = false;
+            Debug.Log("🔹 Joueur trop loin !");
         }
     }
 
@@ -28,15 +29,22 @@ public class PickupItem : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.P))
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            InventaireManager inventory = player.GetComponent<InventaireManager>();
+            if (itemData == null)
+            {
+                Debug.LogWarning("❌ Aucun ItemData assigné à " + gameObject.name);
+                return;
+            }
 
+            InventaireManager inventory = FindAnyObjectByType<InventaireManager>();
             if (inventory != null && inventory.AddItem(itemData, quantity))
             {
-                Destroy(gameObject); // Supprime l'objet après ramassage
+                Debug.Log($"✅ {itemData.itemName} ramassé et ajouté à l’inventaire !");
+                FindAnyObjectByType<InventaireUI>().UpdateUI();
+                Destroy(gameObject);
             }
         }
     }
+
 
 
 }

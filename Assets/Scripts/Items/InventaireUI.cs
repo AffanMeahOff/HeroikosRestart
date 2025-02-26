@@ -8,7 +8,7 @@ public class InventaireUI : MonoBehaviour
     public GameObject inventorySlotPrefab;
     public Transform inventoryPanel;
 
-    void Start()
+    public void Start()
     {
         UpdateUI();
     }

@@ -1036,7 +1036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -400}
+  m_AnchoredPosition: {x: 300, y: -400}
   m_SizeDelta: {x: 375, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8204340337211508945
@@ -1606,8 +1606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 6294981593847667337}
-  Camera: {fileID: 5397300789229208588}
-  NameObject: {fileID: 0}
 --- !u!1 &2657644573274474420
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,7 +5367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jar
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5834,6 +5832,52 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &6964885020150640262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8970095049126366629}
+  - component: {fileID: 392799372786528117}
+  m_Layer: 0
+  m_Name: InventaireManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8970095049126366629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964885020150640262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 545045024205740033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392799372786528117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964885020150640262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa6030f4b4d2e342821f9cda5a907f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  maxSlots: 10
 --- !u!1 &7061351123471092358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,7 +5894,6 @@ GameObject:
   - component: {fileID: 8591506043394771159}
   - component: {fileID: 8710788998594216479}
   - component: {fileID: 2739176047711527155}
-  - component: {fileID: 5629920654586604744}
   - component: {fileID: 8511991395198296829}
   - component: {fileID: 222108964566044781}
   m_Layer: 0
@@ -5881,6 +5924,7 @@ Transform:
   - {fileID: 5490504051250380573}
   - {fileID: 7309886185907838661}
   - {fileID: 5375477722154600680}
+  - {fileID: 8970095049126366629}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &6387046755383980103
@@ -6031,20 +6075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   epee: {fileID: 7942729531383743615}
---- !u!114 &5629920654586604744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7061351123471092358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaa6030f4b4d2e342821f9cda5a907f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
-  maxSlots: 10
 --- !u!136 &8511991395198296829
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6989,7 +7019,6 @@ GameObject:
   - component: {fileID: 8842396037657311327}
   - component: {fileID: 545360340122401313}
   - component: {fileID: 3195490029797191686}
-  - component: {fileID: 196552945209282287}
   - component: {fileID: 2872807674567155067}
   m_Layer: 0
   m_Name: Temporaire
@@ -7051,20 +7080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3946288902140437354}
---- !u!114 &196552945209282287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8719583580161352363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaa6030f4b4d2e342821f9cda5a907f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
-  maxSlots: 10
 --- !u!114 &2872807674567155067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7127,7 +7142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011f160be1d29e347bc9c01ffcb2c987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 5629920654586604744}
+  inventory: {fileID: 392799372786528117}
   inventorySlotPrefab: {fileID: 5452910701929234610, guid: b5a957b48469cea49af5dce07e8a2ab6, type: 3}
   inventoryPanel: {fileID: 9090242085771434978}
 --- !u!1 &9027337402163097763
