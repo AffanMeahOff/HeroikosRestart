@@ -15,17 +15,18 @@ public class InventaireUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        Debug.Log("Mise à jour de l'inventaire UI...");
         foreach (Transform child in inventoryPanel)
         {
-            Destroy(child.gameObject);
+            if (child.gameObject != inventorySlotPrefab) // Ne pas détruire l'original
+            {
+                Destroy(child.gameObject);
+            }
         }
-
         foreach (InventaireItem item in inventory.items)
         {
             GameObject slot = Instantiate(inventorySlotPrefab, inventoryPanel);
-            slot.transform.GetChild(0).GetComponent<Image>().sprite = item.item.icon;
-            slot.transform.GetChild(1).GetComponent<Text>().text = item.quantity.ToString();
+            //slot.transform.GetChild(0).GetComponent<Image>().sprite = item.item.icon;
+            slot.transform.GetChild(0).GetComponent<Text>().text = item.quantity.ToString();
         }
     }
 }

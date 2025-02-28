@@ -4,8 +4,47 @@ public class PickupItem : MonoBehaviour
 {
     public ItemData itemData; // Objet ramassable
     public int quantity = 1;
+    
+    public InventaireManager inventory;
 
+
+    public InventaireUI UI;
+    
     private bool isPlayerNearby = false; // Indique si le joueur est proche
+
+
+    void Start()
+    {
+        inventory = FindObjectOfType<InventaireManager>();
+        if (inventory == null) // Vérifie si Inventory est déjà assigné
+        {
+            inventory = FindFirstObjectByType<InventaireManager>(); // Trouve l'inventaire dans la scène
+        }
+
+        if (inventory == null)
+        {
+            Debug.LogError("❌ Aucun Inventory trouvé dans la scène !");
+        }
+        else
+        {
+            Debug.Log($"✅ Inventory trouvé : {inventory.name}");
+        }
+
+        if (UI == null) // Vérifie si UI est déjà assigné
+        {
+            UI = FindFirstObjectByType<InventaireUI>(); // Trouve l'inventaire dans la scène
+        }
+
+        if (UI == null)
+        {
+            Debug.LogError("❌ Aucun UI trouvé dans la scène !");
+        }
+        else
+        {
+            Debug.Log($"✅ UI trouvé : {UI.name}");
+        }
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,23 +66,33 @@ public class PickupItem : MonoBehaviour
 
     private void Update()
     {
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.P))
+        
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            if (itemData == null)
-            {
-                Debug.LogWarning("❌ Aucun ItemData assigné à " + gameObject.name);
-                return;
-            }
+            Debug.Log("🔹 Touche P pressée !");
 
-            InventaireManager inventory = FindAnyObjectByType<InventaireManager>();
-            if (inventory != null && inventory.AddItem(itemData, quantity))
+            if (isPlayerNearby)
             {
-                Debug.Log($"✅ {itemData.itemName} ramassé et ajouté à l’inventaire !");
-                FindAnyObjectByType<InventaireUI>().UpdateUI();
-                Destroy(gameObject);
+                if (itemData == null)
+                {
+                    Debug.LogWarning("❌ Aucun ItemData assigné à " + gameObject.name);
+                    return;
+                }
+                
+                if (inventory != null && inventory.AddItem(itemData, quantity))
+                {
+                    Debug.Log($"✅ {itemData.itemName} ramassé !");
+                    UI.UpdateUI();
+                    Destroy(gameObject);
+                }
+            }
+            else
+            {
+                Debug.Log("❌ Trop loin pour ramasser !");
             }
         }
     }
+
 
 
 
