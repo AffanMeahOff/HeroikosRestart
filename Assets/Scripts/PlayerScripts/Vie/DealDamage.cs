@@ -1,12 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DealDamage : MonoBehaviour 
 {
-    public void SendDamage (int dam)
+    public int damage = 10;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        PlayerHealth playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        playerStats.TakeDamage(dam);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth playerStats = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerStats != null)
+            {
+                playerStats.TakeDamage(damage);
+            }
+        }
     }
 }
