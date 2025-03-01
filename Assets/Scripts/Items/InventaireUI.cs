@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class InventaireUI : MonoBehaviour
 {
@@ -25,8 +26,7 @@ public class InventaireUI : MonoBehaviour
         foreach (InventaireItem item in inventory.items)
         {
             GameObject slot = Instantiate(inventorySlotPrefab, inventoryPanel);
-            //slot.transform.GetChild(0).GetComponent<Image>().sprite = item.item.icon;
-            slot.transform.GetChild(0).GetComponent<Text>().text = item.item.itemName;
+            slot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.item.itemName;
         }
     }
 }
