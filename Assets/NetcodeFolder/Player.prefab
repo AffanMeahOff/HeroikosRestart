@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 6294981593847667337}
+  Cam: {fileID: 5397300789229208588}
 --- !u!1 &3238376475509432698
 GameObject:
   m_ObjectHideFlags: 0
