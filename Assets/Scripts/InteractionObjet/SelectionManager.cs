@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
  
@@ -8,16 +9,18 @@ public class SelectionManager : MonoBehaviour
 {
  
     public GameObject interaction_Info_UI;
-    Text interaction_text;
+    public Camera Cam;
+
+    TMP_Text interaction_text;
  
     private void Start()
     {
-        interaction_text = interaction_Info_UI.GetComponent<Text>();
+        interaction_text = interaction_Info_UI.GetComponent<TMP_Text>();
     }
  
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
@@ -36,4 +39,3 @@ public class SelectionManager : MonoBehaviour
         }
     }
 }
-

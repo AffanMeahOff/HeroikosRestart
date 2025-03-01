@@ -26,7 +26,7 @@ public class InventaireUI : MonoBehaviour
         {
             GameObject slot = Instantiate(inventorySlotPrefab, inventoryPanel);
             //slot.transform.GetChild(0).GetComponent<Image>().sprite = item.item.icon;
-            slot.transform.GetChild(0).GetComponent<Text>().text = item.quantity.ToString();
+            slot.transform.GetChild(0).GetComponent<Text>().text = item.item.itemName;
         }
     }
 }

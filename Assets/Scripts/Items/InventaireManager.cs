@@ -76,10 +76,13 @@ public class InventaireManager : MonoBehaviour
     public List<InventaireItem> items = new List<InventaireItem>();
     public int maxSlots = 27;
 
+    /*
     void Awake()
     {
         Debug.Log($"📦 Inventory trouvé sur {gameObject.name}, actif : {gameObject.activeInHierarchy}");
+        Debug.Log($"📦 UI trouvé sur {gameObject.name}, actif : {gameObject.activeInHierarchy}");
     }
+    */
 
     public bool AddItem(ItemData item, int quantity)
     {
