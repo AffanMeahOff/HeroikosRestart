@@ -7,13 +7,19 @@ public class ScriptTemporaire : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
+            SceneManager.LoadSceneAsync(3);
+        }
 
         if(Input.GetKeyDown(KeyCode.E))
         {
             menuinventaire.SetActive(!menuinventaire.activeSelf);  
+            //InventaireManager.Instance.ListItems();
             if (menuinventaire.activeSelf)
             {
-                Cursor.lockState = CursorLockMode.None; //Pour eviter de sorir de l'ecran
+                Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
             }
             else
             {

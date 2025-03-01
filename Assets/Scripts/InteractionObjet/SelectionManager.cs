@@ -15,7 +15,7 @@ public class SelectionManager : MonoBehaviour
  
     private void Start()
     {
-        interaction_text = interaction_Info_UI.GetComponent<TMP_Text>();    
+        interaction_text = interaction_Info_UI.GetComponent<TMP_Text>();
     }
  
     void Update()
