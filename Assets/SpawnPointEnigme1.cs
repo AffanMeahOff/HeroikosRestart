@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
+using Unity.Netcode.Components;
 
 
-public class SpawnPointEnigme1 : MonoBehaviour
+public class SpawnPointEnigme1 : NetworkBehaviour
 {
     [SerializeField] private Transform player;
     private GameObject spawnPoint;
@@ -20,7 +22,10 @@ public class SpawnPointEnigme1 : MonoBehaviour
         if(scene.name == "Enigme1")
         {
             spawnPoint = GameObject.Find("Spawn");
-            player.SetPositionAndRotation(spawnPoint.transform.position, player.transform.rotation);
+            player.GetComponent<CharacterController>().enabled = false;
+            player.transform.position = new Vector3(679,560,308);
+            player.GetComponent<CharacterController>().enabled = true;
+            //player.SetPositionAndRotation(new Vector3(679,560,308), player.transform.rotation);
             Physics.SyncTransforms();
         }
     }

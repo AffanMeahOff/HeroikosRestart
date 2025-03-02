@@ -275,13 +275,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 41816285}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 41816287}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 41816286}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 41816288}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &41816283 stripped
 Transform:
@@ -314,6 +324,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &41816286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41816284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 41816287}
+--- !u!114 &41816287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41816284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &41816288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41816284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1001 &57850976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,13 +682,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159627421}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159627423}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159627422}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159627424}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &159627419 stripped
 Transform:
@@ -669,6 +731,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &159627422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159627420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 159627423}
+--- !u!114 &159627423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159627420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &159627424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159627420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1 &167276230
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,13 +860,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 176641669}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 176641671}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 176641670}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 176641672}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &176641667 stripped
 Transform:
@@ -795,6 +909,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &176641670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176641668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 176641671}
+--- !u!114 &176641671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176641668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &176641672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176641668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1224,7 @@ GameObject:
   - component: {fileID: 326131358}
   - component: {fileID: 326131360}
   - component: {fileID: 326131359}
+  - component: {fileID: 326131361}
   m_Layer: 0
   m_Name: GameManagerObj
   m_TagString: Untagged
@@ -1110,12 +1267,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326131356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3ba8c0a59712d94d9b412dd99946d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 810374708}
+  Cam: {fileID: 0}
+--- !u!114 &326131361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326131356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7532e0328c02e9a418b9b7a36b84699b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &359387751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1307,13 +1477,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 451143008}
-    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 451143010}
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 451143011}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 451143009}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 451143012}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &451143006 stripped
 Transform:
@@ -1325,20 +1498,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
   m_PrefabInstance: {fileID: 451143005}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &451143008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451143007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerinarea: 0
-  ItemName: Collect Crystal ?
 --- !u!114 &451143009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,8 +1511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerinarea: 0
-  ItemName: 
-  enigme1Counter: {fileID: 0}
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 451143011}
 --- !u!65 &451143010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1375,6 +1534,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &451143011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451143007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &451143012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451143007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1 &486215306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1572,7 @@ GameObject:
   - component: {fileID: 486215307}
   - component: {fileID: 486215309}
   - component: {fileID: 486215308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1582,13 +1768,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 631208875}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 631208877}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 631208876}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 631208878}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &631208873 stripped
 Transform:
@@ -1621,6 +1817,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &631208876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631208874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 631208877}
+--- !u!114 &631208877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631208874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &631208878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631208874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1001 &645124454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2003,13 +2241,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 876273249}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876273251}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876273250}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876273252}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &876273247 stripped
 Transform:
@@ -2042,6 +2290,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &876273250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876273248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 876273251}
+--- !u!114 &876273251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876273248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &876273252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876273248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1 &878385293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,13 +2487,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 51.659
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 956353153}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 956353155}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 956353154}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 956353156}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &956353151 stripped
 Transform:
@@ -2236,6 +2536,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &956353154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956353152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 956353155}
+--- !u!114 &956353155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956353152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &956353156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956353152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,7 +2596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &961739750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,13 +3354,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1419457925}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1419457927}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1419457926}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1419457928}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &1419457923 stripped
 Transform:
@@ -3051,6 +3403,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &1419457926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419457924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 1419457927}
+--- !u!114 &1419457927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419457924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &1419457928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419457924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1001 &1467317123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3459,13 +3853,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1658176981}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1658176983}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1658176982}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1658176984}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &1658176979 stripped
 Transform:
@@ -3498,6 +3902,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &1658176982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658176980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 1658176983}
+--- !u!114 &1658176983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658176980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &1658176984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658176980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1001 &1739512911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3824,7 +4270,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1980680628
 RectTransform:
@@ -4127,13 +4573,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7004552995711456563, guid: 465c505844950da499dcf096a6da4409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2022539211}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2022539213}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2022539212}
+    - targetCorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2022539214}
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
 --- !u!4 &2022539209 stripped
 Transform:
@@ -4166,6 +4622,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: -0.0055694426, y: 0.02346941, z: 0.0136617785}
+--- !u!114 &2022539212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022539210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e2951490b4a54dbfb4afab73d9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
+  enigme1Counter: {fileID: 2022539213}
+--- !u!114 &2022539213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022539210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1470926e2f86a4b9ac14644a03ddee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 1980680629}
+--- !u!114 &2022539214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022539210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae588898ce01047b612eccdf8954f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerinarea: 0
+  ItemName: Collect Crystal ?
 --- !u!1001 &2058108543
 PrefabInstance:
   m_ObjectHideFlags: 0

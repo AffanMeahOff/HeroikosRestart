@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,9 +6,21 @@ using UnityEngine.UI;
 public class Enigme1Counter : MonoBehaviour
 {
     [SerializeField] TMP_Text count;
-    int crystals = 0;
+    private int crystals; 
 
-    private void Awake()
+    private void Start()
+    {
+        if (count != null && int.TryParse(count.text, out crystals))
+        {
+            Debug.Log("Nombre de crystaux : " + crystals);
+        }
+        else
+        {
+            Debug.LogWarning("Impossible");
+            crystals = 0; 
+        }
+    }
+    private void Awake()        
     {
         UpdateHUD();
     }

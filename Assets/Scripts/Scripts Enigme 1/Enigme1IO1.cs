@@ -17,7 +17,7 @@ public class Enigme1IO1 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0) && playerinarea)
         {
             enigme1Counter.collected += 1;
-
+            Destroy(gameObject);
         }
     }
 

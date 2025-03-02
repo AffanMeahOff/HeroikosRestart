@@ -496,6 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6533453058776416827}
   - component: {fileID: 3589898666213147168}
+  - component: {fileID: 3559900166721723674}
   m_Layer: 0
   m_Name: SelectionManager
   m_TagString: Untagged
@@ -528,6 +529,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03d3ce611a9ff1448bd586fc2b0192bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction_Info_UI: {fileID: 6294981593847667337}
+  Cam: {fileID: 5397300789229208588}
+--- !u!114 &3559900166721723674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2516613811566751373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ba8c0a59712d94d9b412dd99946d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 6294981593847667337}
@@ -2511,9 +2526,10 @@ GameObject:
   - component: {fileID: 1635869129143166935}
   - component: {fileID: 8710788998594216479}
   - component: {fileID: 2739176047711527155}
+  - component: {fileID: 3157016133884141059}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2672,6 +2688,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   epee: {fileID: 7942729531383743615}
+--- !u!114 &3157016133884141059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061351123471092358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c89f51c498799f4393e99981681088f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7067878678790993813
 GameObject:
   m_ObjectHideFlags: 0

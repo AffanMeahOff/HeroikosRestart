@@ -8,6 +8,8 @@ public class Enigme1Manager : MonoBehaviour
 {
  
     public GameObject interaction_Info_UI;
+    public Camera Cam;
+
     Text interaction_text;
  
     private void Start()
@@ -17,15 +19,15 @@ public class Enigme1Manager : MonoBehaviour
  
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
             var selectionTransform = hit.transform;
  
-            if (selectionTransform.GetComponent<InteractableObject>())
+            if (selectionTransform.GetComponent<Enigme1IO1>())
             {
-                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
+                interaction_text.text = selectionTransform.GetComponent<Enigme1IO1>().GetItemName();
                 interaction_Info_UI.SetActive(true);
             }
             else 
