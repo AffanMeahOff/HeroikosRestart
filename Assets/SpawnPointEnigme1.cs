@@ -21,10 +21,10 @@ public class SpawnPointEnigme1 : NetworkBehaviour
     {
         if(scene.name == "Enigme1")
         {
-            spawnPoint = GameObject.Find("Spawn");
-            player.GetComponent<CharacterController>().enabled = false;
-            player.transform.position = new Vector3(679,560,308);
-            player.GetComponent<CharacterController>().enabled = true;
+            //spawnPoint = GameObject.Find("Spawn");
+            //player.GetComponent<CharacterController>().enabled = false;
+            //player.transform.position = new Vector3(679,560,308);
+            //player.GetComponent<CharacterController>().enabled = true;
             //player.SetPositionAndRotation(new Vector3(679,560,308), player.transform.rotation);
             Physics.SyncTransforms();
         }

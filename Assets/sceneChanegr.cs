@@ -1,11 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;  
 
 
 public class sceneChanegr : MonoBehaviour
 {
+    //[SerializeField] private Transform player;
+
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Enigme1"); 
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("contact");
+            }
     }
 }

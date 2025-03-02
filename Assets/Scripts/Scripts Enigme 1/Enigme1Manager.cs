@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
  
@@ -10,11 +11,11 @@ public class Enigme1Manager : MonoBehaviour
     public GameObject interaction_Info_UI;
     public Camera Cam;
 
-    Text interaction_text;
+    TMP_Text interaction_text;
  
     private void Start()
     {
-        interaction_text = interaction_Info_UI.GetComponent<Text>();
+        interaction_text = interaction_Info_UI.GetComponent<TMP_Text>();
     }
  
     void Update()

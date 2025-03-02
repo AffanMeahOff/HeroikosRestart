@@ -8,7 +8,7 @@ public class TeleportPlayers : MonoBehaviour
 
         foreach (GameObject player in players)
         {
-            player.transform.SetPositionAndRotation(new Vector3(679, 560, 308), player.transform.rotation);
+            //player.transform.SetPositionAndRotation(new Vector3(679, 560, 308), player.transform.rotation);
         }
     }
 }
