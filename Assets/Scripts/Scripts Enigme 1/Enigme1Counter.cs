@@ -25,17 +25,30 @@ public class Enigme1Counter : MonoBehaviour
         UpdateHUD();
     }
 
+    private void Update()
+    {
+        if (count != null && int.TryParse(count.text, out crystals))
+        {
+        }
+    }
+
+
     public int collected {
         get {
             return crystals;
         }
         set {
+            
             crystals = value;
+            
             UpdateHUD();
         }
     }
+    
     private void UpdateHUD()
     {
-        count.text = crystals.ToString();
+        Debug.Log("Count text = " + count.text);
+        Debug.Log("Crystals = " + collected);
+        count.text = collected.ToString();
     }
 }
