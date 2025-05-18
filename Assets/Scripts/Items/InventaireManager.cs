@@ -10,9 +10,11 @@ public class InventaireManager : MonoBehaviour
 
     public bool AddItem(ItemData item, int quantity)
     {
+
         foreach (InventaireItem invItem in items)
         {
-            if (invItem.item == item && invItem.quantity < item.maxStack)
+            Debug.Log($"Nouveau: {item.itemName} ajouté au stack.");
+            if (invItem.item.ID == item.ID && invItem.quantity < item.maxStack)
             {
                 invItem.quantity += quantity;
                 Debug.Log($"Ajouté: {item.itemName} (Quantité: {invItem.quantity})");
@@ -30,9 +32,9 @@ public class InventaireManager : MonoBehaviour
         return false;
     }
 
-    public void RemoveItem(ItemData item, int quantity)
+    public void RemoveItem(ItemData item, int quantity=1)
     {
-        InventaireItem invItem = items.Find(i => i.item == item);
+        InventaireItem invItem = items.Find(i => i.item.ID == item.ID);
         if (invItem != null)
         {
             invItem.quantity -= quantity;
