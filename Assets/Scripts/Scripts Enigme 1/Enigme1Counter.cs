@@ -8,6 +8,8 @@ public class Enigme1Counter : MonoBehaviour
     [SerializeField] TMP_Text count;
     private int crystals; 
 
+    public bool enigme1Finished;
+
     private void Start()
     {
         if (count != null && int.TryParse(count.text, out crystals))
@@ -29,6 +31,10 @@ public class Enigme1Counter : MonoBehaviour
     {
         if (count != null && int.TryParse(count.text, out crystals))
         {
+        }
+        if(crystals == 10)
+        {
+            enigme1Finished = true;
         }
     }
 

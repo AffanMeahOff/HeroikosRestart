@@ -11,6 +11,8 @@ public class Enigme1Manager : MonoBehaviour
     public GameObject interaction_Info_UI;
     public Camera Cam;
 
+    public Enigme1Counter Counter;
+
     TMP_Text interaction_text;
  
     private void Start()
@@ -20,6 +22,11 @@ public class Enigme1Manager : MonoBehaviour
  
     void Update()
     {
+        bool finished = Counter.enigme1Finished;
+        if(finished)
+        {
+            return;
+        }
         Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))

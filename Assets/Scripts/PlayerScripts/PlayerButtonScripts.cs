@@ -4,13 +4,14 @@ using UnityEngine.UI;
 public class PlayerButtonScripts : MonoBehaviour
 {
     [SerializeField] private GameObject epee;
+    [SerializeField] private bool swordOn = false;
     public InventaireManager inventory;
     public InventaireUI left_UI; 
     public GameObject inventorySlotPrefab;
     public Transform inventoryPanel;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && swordOn)
         {
             epee.SetActive(!epee.activeSelf);
             UpdateUI();
