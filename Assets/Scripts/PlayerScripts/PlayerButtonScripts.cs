@@ -6,19 +6,30 @@ public class PlayerButtonScripts : MonoBehaviour
     [SerializeField] private GameObject epee;
     [SerializeField] private bool swordOn = false;
     public InventaireManager inventory;
+    private Enigme1Counter Counter;
+
+    [SerializeField] Enigme1Manager enigme1Manager;
     public InventaireUI left_UI; 
     public GameObject inventorySlotPrefab;
     public Transform inventoryPanel;
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("added 9");
+            Counter.collected += 9;
+        }
+        swordOn = enigme1Manager != null && enigme1Manager.CanEnableSword();
         if (Input.GetKeyDown(KeyCode.F) && swordOn)
         {
-            epee.SetActive(!epee.activeSelf);
+            epee.SetActive(epee.activeSelf);
             UpdateUI();
         }
+        
     }
     public void Start()
     {
+        Counter = FindAnyObjectByType<Enigme1Counter>();
         UpdateUI();
     }
 

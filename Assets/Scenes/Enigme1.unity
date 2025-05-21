@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &41816288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &159627424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,6 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &176641672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,6 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &326131360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,6 +1278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 810374708}
   Cam: {fileID: 0}
+  canenablesword: 0
 --- !u!114 &326131361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,6 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &451143012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,6 +1851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &631208878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2318,6 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &876273252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,6 +2572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &956353156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3431,6 +3440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &1419457928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3930,6 +3940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &1658176984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4650,6 +4661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: {fileID: 1980680629}
+  enigme1Finished: 0
 --- !u!114 &2022539214
 MonoBehaviour:
   m_ObjectHideFlags: 0
