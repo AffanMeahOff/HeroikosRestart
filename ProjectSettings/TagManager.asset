@@ -8,6 +8,9 @@ TagManager:
   - InventaireManager
   - Item
   - Teleporter
+  - TpEliott
+  - TpThiago
+  - TpAmine
   layers:
   - Default
   - TransparentFX
