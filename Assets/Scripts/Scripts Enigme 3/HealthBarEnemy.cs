@@ -4,12 +4,15 @@ using UnityEngine.UI;
 
 public class HealthBarEnemy : MonoBehaviour
 {
-    public event Action OnDeath;
 
     [SerializeField] private Image healthBarImage;
+    public bool IsDead;
     private float currentHealth = 60f;
     private float maxHealth = 60f;
-
+    void Start()
+    {
+        IsDead = false;
+    }
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
@@ -18,7 +21,7 @@ public class HealthBarEnemy : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
-            OnDeath?.Invoke();
+            IsDead = true;
         }
     }
 

@@ -61,7 +61,7 @@ public class MouvementEnnemi : MonoBehaviour
         {
             // Optional: Trigger attack animation here
             move = Vector3.zero;
-            Debug.Log("Enemy is close enough to attack!");
+            //Debug.Log("Enemy is close enough to attack!");
             // GetComponent<Animator>().SetTrigger("Attack");
         }
     }

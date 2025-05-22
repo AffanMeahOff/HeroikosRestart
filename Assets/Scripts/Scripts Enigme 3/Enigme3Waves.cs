@@ -24,21 +24,24 @@ public class Enigme3Waves : MonoBehaviour
     private bool enigme3lost = false;
     public bool enigme3Finished = false;
 
-
-    private string amount = "";
+    [SerializeField] GameObject Group1;
+    //[SerializeField] GameObject Group2;
+    //[SerializeField] GameObject Group3;
+    //[SerializeField] GameObject Group4;
+    //[SerializeField] GameObject Group5;
+    private int tobeat;
 
     public Enigme3Timer Timer;
 
     private void Start()
     {
-        if (count != null && int.TryParse(count.text, out enemies))
+        if (count != null && int.TryParse(count.text, out int check))
         {
-            Debug.Log("Nombre d'ennemis vaincus : " + enemies);
+            Debug.Log("Nombre d'ennemis vaincus : " + check);
         }
         else
         {
             Debug.LogWarning("Impossible");
-            enemies = 0;
         }
     }
     private void Awake()
@@ -47,36 +50,17 @@ public class Enigme3Waves : MonoBehaviour
         UpdateHUD();
         Timer.StartTimer();
         CurrentWave = Wave1;
+        CurrentWave.SetActive(true);
+        Group1.SetActive(true);
     }
 
     private void Update()
     {
-        if (count != null && int.TryParse(count.text, out enemies))
-        {
-        }
+    
         if (!enigme3won && Timer.isOver)
         {
             enigme3lost = true;
-            if (CurrentWave == Wave1)
-            {
-                Wave1.SetActive(false);
-            }
-            else if (CurrentWave == Wave2)
-            {
-                Wave2.SetActive(false);
-            }
-            else if (CurrentWave == Wave3)
-            {
-                Wave3.SetActive(false);
-            }
-            else if (CurrentWave == Wave4)
-            {
-                Wave4.SetActive(false);
-            }
-            else
-            {
-                Wave5.SetActive(false);
-            }
+            CurrentWave.SetActive(false);
             TimesUp.SetActive(true);
         }
         else
@@ -84,42 +68,38 @@ public class Enigme3Waves : MonoBehaviour
             if (!wave1Finished && beaten == 5)
             {
                 wave1Finished = true;
-                enemies = 0;
-                Wave1.SetActive(false);
-                Wave2.SetActive(true);
+                CurrentWave.SetActive(false);
                 CurrentWave = Wave2;
                 Transition();
+                CurrentWave.SetActive(true);
             }
             else if (wave1Finished && !wave2Finished && beaten == 4)
             {
                 wave2Finished = true;
-                enemies = 0;
-                Wave2.SetActive(false);
-                Wave3.SetActive(true);
+                CurrentWave.SetActive(false);
                 CurrentWave = Wave3;
                 Transition();
+                CurrentWave.SetActive(true);
             }
             else if (wave1Finished && wave2Finished && !wave3Finished && beaten == 3)
             {
                 wave3Finished = true;
-                enemies = 0;
-                Wave3.SetActive(false);
-                Wave4.SetActive(true);
+                CurrentWave.SetActive(false);
                 CurrentWave = Wave4;
                 Transition();
+                CurrentWave.SetActive(true);
             }
             else if (wave1Finished && wave2Finished && wave3Finished && !wave4Finished && beaten == 2)
             {
-                wave2Finished = true;
-                enemies = 0;
-                Wave4.SetActive(false);
-                Wave5.SetActive(true);
+                wave4Finished = true;
+                CurrentWave.SetActive(false);
                 CurrentWave = Wave5;
                 Transition();
+                CurrentWave.SetActive(true);
             }
             else if (wave1Finished && wave2Finished && wave3Finished && wave4Finished && beaten == 1)
             {
-                Wave5.SetActive(false);
+                CurrentWave.SetActive(false);
                 Victory.SetActive(true);
                 enigme3won = true;
             }
@@ -132,13 +112,11 @@ public class Enigme3Waves : MonoBehaviour
     {
         get
         {
-            return enemies;
+            return tobeat - enemies;
         }
         set
         {
-
-            enemies = value;
-
+            enemies -= value;
             UpdateHUD();
         }
     }
@@ -148,30 +126,36 @@ public class Enigme3Waves : MonoBehaviour
         Debug.Log("Count text = " + count.text);
         Debug.Log("Defeated = " + beaten);
         count.text = beaten.ToString();
-        enemynumber.text = "Enemies Defeated:   /" + amount;
+        enemynumber.text = "Enemies Defeated:    /" + tobeat;
     }
     public void Transition()
     {
         if (!wave1Finished)
         {
-            amount = "5";
+            enemies = 5;
+            tobeat = 5;
         }
         else if (!wave2Finished)
         {
-            amount = "4";
+            enemies = 4;
+            tobeat = 4;
         }
         else if (!wave3Finished)
         {
-            amount = "3";
+            enemies = 3;
+            tobeat = 3;
         }
         else if (!wave4Finished)
         {
-            amount = "2";
+            enemies = 2;
+            tobeat = 2;
         }
         else
         {
-            amount = "1";
+            enemies = 1;
+            tobeat = 1;
         }
+        UpdateHUD();      
     }
     
 }

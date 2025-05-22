@@ -2759,7 +2759,9 @@ GameObject:
   - component: {fileID: 114248063640914792}
   - component: {fileID: 7036770958237369077}
   - component: {fileID: 3564411225252842960}
-  - component: {fileID: 2159703285080482070}
+  - component: {fileID: 5989795102207495124}
+  - component: {fileID: 1500147353864387384}
+  - component: {fileID: 69039719603119934}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -2899,21 +2901,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64196b9f871dc704f9a907d9c2c1d71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerinarea: 0
   EnemyName: Warrior
   enigme3Waves: {fileID: 0}
---- !u!114 &2159703285080482070
-MonoBehaviour:
+  playerinarea: 0
+--- !u!54 &5989795102207495124
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330231571265528}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1500147353864387384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330231571265528}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81684144b4b40d2428999e68dcc7d4f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Size: {x: 2, y: 3.5, z: 3}
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!136 &69039719603119934
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330231571265528}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1334094481615292
 GameObject:
   m_ObjectHideFlags: 0
@@ -8199,6 +8260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 5387246374459103126}
+  IsDead: 0
 --- !u!1 &4086955417225869600
 GameObject:
   m_ObjectHideFlags: 0
