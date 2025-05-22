@@ -19,10 +19,10 @@ public class PlayerButtonScripts : MonoBehaviour
             Debug.Log("added 9");
             Counter.collected += 9;
         }
-        swordOn = enigme1Manager != null && enigme1Manager.CanEnableSword();
+        swordOn = enigme1Manager != null && enigme1Manager.hehasfinished;
         if (Input.GetKeyDown(KeyCode.F) && swordOn)
         {
-            epee.SetActive(epee.activeSelf);
+            epee.SetActive(!epee.activeSelf);
             UpdateUI();
         }
         
@@ -30,6 +30,7 @@ public class PlayerButtonScripts : MonoBehaviour
     public void Start()
     {
         Counter = FindAnyObjectByType<Enigme1Counter>();
+        epee.SetActive(false);
         UpdateUI();
     }
 
@@ -45,7 +46,7 @@ public class PlayerButtonScripts : MonoBehaviour
         ItemData item = epee.GetComponent<ItemData>();
         if (!epee.activeSelf)
         {
-            
+
             if (inventory.AddItem(item, 1)) // Ajoute l'épée à l'inventaire
             {
                 left_UI.UpdateUI();
@@ -58,9 +59,5 @@ public class PlayerButtonScripts : MonoBehaviour
             GameObject slot = Instantiate(inventorySlotPrefab, inventoryPanel);
             slot.transform.GetComponentInChildren<Image>().sprite = item.icon;
         }
-
-
-
-        
     }
 }

@@ -9,7 +9,7 @@ public class TpEnigme1 : MonoBehaviour
     {
         if (other.CompareTag("Teleporter"))
         {
-            gameObject.transform.position = new Vector3(679, 562, 308);
+            gameObject.transform.position = new Vector3(679, 563, 308);
             Physics.SyncTransforms();
             //gameObject.transform.SetPositionAndRotation(new Vector3(679, 560, 308), gameObject.transform.rotation);
             NetworkManager.Singleton.SceneManager.LoadScene("Enigme1", LoadSceneMode.Single);
