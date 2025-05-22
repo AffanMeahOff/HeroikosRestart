@@ -547,6 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 6294981593847667337}
   Cam: {fileID: 5397300789229208588}
+  Counter: {fileID: 0}
 --- !u!1 &3238376475509432698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,7 +2644,7 @@ Transform:
   m_GameObject: {fileID: 7061351123471092358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 216.81743, y: 2.8577335, z: 189.98047}
+  m_LocalPosition: {x: 216.81743, y: 5.857733, z: 189.98047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3221,6 +3222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   epee: {fileID: 7942729531383743615}
+  swordOn: 0
   inventory: {fileID: 8370541837042138871}
   left_UI: {fileID: 522324017197663036}
   inventorySlotPrefab: {fileID: 2265699636890014005, guid: dace9cd8855f3364eac72e6d7d41dcd2, type: 3}

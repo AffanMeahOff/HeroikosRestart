@@ -13,11 +13,13 @@ public class NetworkManagerUI : MonoBehaviour
     }
     public void Client()
     {
-        SceneManager.LoadSceneAsync(1);
+        NetworkManager.Singleton.StartClient();
+        NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
     public void Host()
     {
-       SceneManager.LoadSceneAsync(1);
+       NetworkManager.Singleton.StartHost();
+       NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
     public void ReturnMenu()
     {

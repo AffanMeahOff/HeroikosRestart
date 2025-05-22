@@ -10,7 +10,7 @@ public class ScriptTemporaire : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
-            SceneManager.LoadSceneAsync(3);
+            SceneManager.LoadSceneAsync(4);
         }
 
         if(Input.GetKeyDown(KeyCode.E))
