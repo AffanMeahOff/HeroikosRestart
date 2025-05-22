@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 6533453058776416827}
   - component: {fileID: 3589898666213147168}
   - component: {fileID: 3559900166721723674}
+  - component: {fileID: 449170964316896491}
   m_Layer: 0
   m_Name: SelectionManager
   m_TagString: Untagged
@@ -547,7 +548,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 6294981593847667337}
   Cam: {fileID: 5397300789229208588}
-  Counter: {fileID: 0}
+--- !u!114 &449170964316896491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2516613811566751373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3994cb7b64aeff247a6249213ade23c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  epee: {fileID: 7942729531383743615}
+  swordOn: 0
+  inventory: {fileID: 8370541837042138871}
+  enigme1Manager: {fileID: 3559900166721723674}
+  left_UI: {fileID: 522324017197663036}
+  inventorySlotPrefab: {fileID: 2265699636890014005, guid: dace9cd8855f3364eac72e6d7d41dcd2, type: 3}
+  inventoryPanel: {fileID: 4257603173939067480}
 --- !u!1 &3238376475509432698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2644,7 +2663,7 @@ Transform:
   m_GameObject: {fileID: 7061351123471092358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 216.81743, y: 5.857733, z: 189.98047}
+  m_LocalPosition: {x: 216.81743, y: 2.8577335, z: 189.98047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3173,7 +3192,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8253627000789688250}
   - component: {fileID: 8842396037657311327}
-  - component: {fileID: 4130466546419793636}
   m_Layer: 0
   m_Name: Temporaire
   m_TagString: Untagged
@@ -3209,24 +3227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuinventaire: {fileID: 5957993980123019665}
---- !u!114 &4130466546419793636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8719583580161352363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3994cb7b64aeff247a6249213ade23c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  epee: {fileID: 7942729531383743615}
-  swordOn: 0
-  inventory: {fileID: 8370541837042138871}
-  left_UI: {fileID: 522324017197663036}
-  inventorySlotPrefab: {fileID: 2265699636890014005, guid: dace9cd8855f3364eac72e6d7d41dcd2, type: 3}
-  inventoryPanel: {fileID: 4257603173939067480}
 --- !u!1001 &7132390903279204654
 PrefabInstance:
   m_ObjectHideFlags: 0
