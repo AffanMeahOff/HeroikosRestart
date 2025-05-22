@@ -32,10 +32,9 @@ public class Enigme1Counter : MonoBehaviour
         if (count != null && int.TryParse(count.text, out crystals))
         {
         }
-        if(crystals == 10)
-        {
-            enigme1Finished = true;
-        }
+    
+        enigme1Finished = collected >= 1;
+        
     }
 
 
