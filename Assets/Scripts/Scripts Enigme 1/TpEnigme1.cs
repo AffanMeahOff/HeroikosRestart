@@ -16,7 +16,7 @@ public class TpEnigme1 : MonoBehaviour
         }
         if(other.CompareTag("TpEliott"))
         {
-            gameObject.transform.position = new Vector3(679, 560, 308);
+            gameObject.transform.position = new Vector3(1084, 563, 84);
             Physics.SyncTransforms();
             //gameObject.transform.SetPositionAndRotation(new Vector3(679, 560, 308), gameObject.transform.rotation);
             NetworkManager.Singleton.SceneManager.LoadScene("Enigme2", LoadSceneMode.Single);
