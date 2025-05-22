@@ -35,7 +35,7 @@ public class Enigme3Manager : MonoBehaviour
  
             if (selectionTransform.GetComponent<Enigme3IO1>())
             {
-                interaction_text.text = selectionTransform.GetComponent<Enigme3IO1>().GetItemName();
+                interaction_text.text = selectionTransform.GetComponent<Enigme3IO1>().GetEnemyName();
                 interaction_Info_UI.SetActive(true);
             }
             else 

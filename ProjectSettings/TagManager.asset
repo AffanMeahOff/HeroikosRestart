@@ -11,6 +11,7 @@ TagManager:
   - TpEliott
   - TpThiago
   - TpAmine
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -81,7 +81,7 @@ public class Enigme3Waves : MonoBehaviour
         }
         else
         {
-            if (!wave1Finished && enemies == 5)
+            if (!wave1Finished && beaten == 5)
             {
                 wave1Finished = true;
                 enemies = 0;
@@ -90,7 +90,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave2;
                 Transition();
             }
-            else if (wave1Finished && !wave2Finished && enemies == 4)
+            else if (wave1Finished && !wave2Finished && beaten == 4)
             {
                 wave2Finished = true;
                 enemies = 0;
@@ -99,7 +99,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave3;
                 Transition();
             }
-            else if (wave1Finished && wave2Finished && !wave3Finished && enemies == 3)
+            else if (wave1Finished && wave2Finished && !wave3Finished && beaten == 3)
             {
                 wave3Finished = true;
                 enemies = 0;
@@ -108,7 +108,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave4;
                 Transition();
             }
-            else if (wave1Finished && wave2Finished && wave3Finished && !wave4Finished && enemies == 2)
+            else if (wave1Finished && wave2Finished && wave3Finished && !wave4Finished && beaten == 2)
             {
                 wave2Finished = true;
                 enemies = 0;
@@ -117,7 +117,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave5;
                 Transition();
             }
-            else if (wave1Finished && wave2Finished && wave3Finished && wave4Finished && enemies == 1)
+            else if (wave1Finished && wave2Finished && wave3Finished && wave4Finished && beaten == 1)
             {
                 Wave5.SetActive(false);
                 Victory.SetActive(true);
