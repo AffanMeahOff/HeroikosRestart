@@ -2647,6 +2647,7 @@ GameObject:
   - component: {fileID: 6335186175237310138}
   - component: {fileID: 4212950999365579485}
   - component: {fileID: 6929978311705877878}
+  - component: {fileID: 4286739621184174516}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2716,7 +2717,7 @@ MonoBehaviour:
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
+  ActiveSceneSynchronization: 1
   SceneMigrationSynchronization: 1
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
@@ -2854,7 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3717553ac8032b94fb9523e94c56f643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 100
 --- !u!114 &6929978311705877878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2869,6 +2870,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   cameraHolder: {fileID: 6001755932975111686}
+--- !u!114 &4286739621184174516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061351123471092358}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19698130a2d404199122e5c61d7abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 4
+  damage: 30
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &7067878678790993813
 GameObject:
   m_ObjectHideFlags: 0

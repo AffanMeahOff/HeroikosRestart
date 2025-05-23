@@ -30,7 +30,7 @@ public class TpEnigme1 : MonoBehaviour
         }  
         if(other.CompareTag("TpAmine"))
         {
-            gameObject.transform.position = new Vector3(679, 560, 308);
+            gameObject.transform.position = new Vector3(600, 700, 308);
             Physics.SyncTransforms();
             //gameObject.transform.SetPositionAndRotation(new Vector3(679, 560, 308), gameObject.transform.rotation);
             NetworkManager.Singleton.SceneManager.LoadScene("Enigme4", LoadSceneMode.Single);
