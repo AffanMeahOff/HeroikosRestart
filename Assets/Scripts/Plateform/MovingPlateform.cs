@@ -1,24 +1,43 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-
-public class MovingPlateform : MonoBehaviour
+public class SimpleMovingPlatform : MonoBehaviour
 {
-    
+    private Transform playerOnPlatform = null;
+    private float toupdate;
+
+    void Start()
+    {
+        toupdate = transform.position.x;
+    }
+
+    void Update()
+    {
+        toupdate = transform.position.x;
+
+        if (playerOnPlatform != null)
+        {
+            playerOnPlatform.position = new Vector3(toupdate ,playerOnPlatform.position.y, playerOnPlatform.position.z);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            other.transform.SetParent(this.transform);
+            Debug.Log("Colision");
+            playerOnPlatform = other.transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            other.transform.SetParent(null);
+            if (playerOnPlatform == other.transform)
+                playerOnPlatform = null;
+            Debug.Log("Tombe");
+
         }
     }
 }
+
