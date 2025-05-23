@@ -9,11 +9,11 @@ public class ScriptTemporaire : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
-            pausemenu.SetActive(!pausemenu.activeSelf);
-        }
+        // if(Input.GetKeyDown(KeyCode.Tab))
+        // {
+        //     Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
+        //     pausemenu.SetActive(!pausemenu.activeSelf);
+        // }
 
         if(Input.GetKeyDown(KeyCode.E))
         {

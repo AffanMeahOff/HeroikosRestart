@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 public class NewPauseMenuScript : MonoBehaviour
 {
     [SerializeField]private GameObject PauseMenu;
-    
+    [SerializeField]private GameObject map;
+
+    [SerializeField]private GameObject player;
+
     public bool IsPause;
     void Start()
     {
         PauseMenu.SetActive(false);
+        map.SetActive(false);
     }
     void Update()
     {
@@ -34,19 +38,61 @@ public class NewPauseMenuScript : MonoBehaviour
     }
     public void ExitGame()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync(1);
     }
     public void OpenMap()
     {
+        map.SetActive(true);
+    }
+    public void closeMap()
+    {
+        map.SetActive(false);
+    }
+
+    public void Enigme1()
+    {
+        player.transform.position = new Vector3(-653, 0, 89);
+        PauseMenu.SetActive(false);
+        map.SetActive(false);
+        IsPause = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void Enigme2()
+    {
+        player.transform.position = new Vector3(-733, 0, 743);
+        PauseMenu.SetActive(false);
+        map.SetActive(false);
+        IsPause = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
+    public void Enigme3()
+    {
+        player.transform.position = new Vector3(352, 0, 599);
+        PauseMenu.SetActive(false);
+        map.SetActive(false);
+        IsPause = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
+    public void Enigme4()
+    {
+        player.transform.position = new Vector3(76, 0, 223);
+        PauseMenu.SetActive(false);
+        map.SetActive(false);
+        IsPause = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
     public void MultiplayerPannel()
     {
-
+        SceneManager.LoadSceneAsync(2);
     }
     public void ResumeGame()
     {
         PauseMenu.SetActive(false);
+        map.SetActive(false);
         IsPause = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
