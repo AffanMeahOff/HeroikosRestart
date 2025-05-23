@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
-public class playerProtectScript : MonoBehaviour
+
+public class playerProtectScript : NetworkBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,6 +13,9 @@ public class playerProtectScript : MonoBehaviour
     }
     public float secu = -20f;
     public Vector3 respawnPosition = new Vector3(217f, 50f, 190f);
+
+    public GameObject endscreen;
+
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +27,7 @@ public class playerProtectScript : MonoBehaviour
         }
         else if (sceneName == "Enigme2" && transform.position.y < secu)
         {
-            transform.position = new Vector3(1084, 563, 84);
+            transform.position = new Vector3(1100, 563, 84);
         }
         else if (sceneName == "Enigme3" && transform.position.y < secu || sceneName == "Enigme4" && transform.position.y < secu)
         {
@@ -38,4 +43,23 @@ public class playerProtectScript : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EndOfEnigme2"))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            endscreen.SetActive(true);
+        }
+        if (other.CompareTag("Death"))
+        {
+            transform.position = respawnPosition;
+        }
+    }
+    public void yes()
+    {
+        if (!IsOwner) return;
+        endscreen.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    
 }

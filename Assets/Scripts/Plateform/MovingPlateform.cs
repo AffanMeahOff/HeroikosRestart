@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SimpleMovingPlatform : MonoBehaviour
 {
-    private Transform playerOnPlatform = null;
+    private Transform player = null;
     private float toupdate;
 
     void Start()
@@ -14,9 +14,9 @@ public class SimpleMovingPlatform : MonoBehaviour
     {
         toupdate = transform.position.x;
 
-        if (playerOnPlatform != null)
+        if (player != null)
         {
-            playerOnPlatform.position = new Vector3(toupdate ,playerOnPlatform.position.y, playerOnPlatform.position.z);
+            player.position = new Vector3(toupdate ,player.position.y, player.position.z);
         }
     }
 
@@ -25,7 +25,7 @@ public class SimpleMovingPlatform : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Colision");
-            playerOnPlatform = other.transform;
+            player = other.transform;
         }
     }
 
@@ -33,8 +33,10 @@ public class SimpleMovingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (playerOnPlatform == other.transform)
-                playerOnPlatform = null;
+            if (player == other.transform)
+            { 
+            player = null;
+            }
             Debug.Log("Tombe");
 
         }
