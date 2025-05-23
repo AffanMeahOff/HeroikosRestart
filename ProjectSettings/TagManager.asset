@@ -12,6 +12,8 @@ TagManager:
   - TpThiago
   - TpAmine
   - EndOfEnigme2
+  - Enemy
+  - Death
   layers:
   - Default
   - TransparentFX
