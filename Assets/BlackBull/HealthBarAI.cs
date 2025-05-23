@@ -7,8 +7,8 @@ public class HealthBarAI : MonoBehaviour
     public event Action OnDeath;
 
     [SerializeField] private Image healthBarImage;
-    private float currentHealth = 100f;
-    private float maxHealth = 100f;
+    private float currentHealth = 300f;
+    private float maxHealth = 300f;
 
     public void TakeDamage(float amount)
     {

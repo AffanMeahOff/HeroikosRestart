@@ -1,16 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 public class ScreenFade : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public CanvasGroup fadeGroup;
+
     void Start()
     {
-        
+        fadeGroup.alpha = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FadeToBlack()
     {
-        
+        StartCoroutine(Fade());
+    }
+
+    IEnumerator Fade()
+    {
+        while (fadeGroup.alpha < 1)
+        {
+            fadeGroup.alpha += Time.deltaTime / 2f;
+            yield return null;
+        }
     }
 }
+

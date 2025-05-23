@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public float health = 100f;
+    public float health = 100;
     public GameObject player;
     public GameObject endGameCanvas;
 
@@ -14,44 +14,29 @@ public class BossController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         if (isDead) return;
 
         health -= amount;
-        if (health <= 0f)
+
+        if (health <= 0)
         {
             Die();
         }
     }
 
-    void AttackPlayer()
-    {
-        if (player != null)
-        {
-            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(7);
-            }
-        }
-    }
+
 
     void Update()
     {
         if (isDead) return;
-
-        float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 3f)
-        {
-            AttackPlayer();
-        }
     }
 
     void Die()
     {
         isDead = true;
-        animator.SetBool("isDead", true);
+        Destroy(gameObject);
         Invoke("ShowEndScreen", 4f);
     }
 
