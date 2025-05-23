@@ -22,6 +22,8 @@ public class Enigme1Manager : MonoBehaviour
     public bool hehasfinished = false;
 
     [SerializeField] private GameObject EndEnigme;
+    [SerializeField] private GameObject nextEnigme;
+
 
     private void Start()
     {
@@ -72,6 +74,12 @@ public class Enigme1Manager : MonoBehaviour
     public void ok()
     {
         EndEnigme.SetActive(false);
+        nextEnigme.SetActive(true);
+        //Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void wecango()
+    {
+        nextEnigme.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 }

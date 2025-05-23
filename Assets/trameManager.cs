@@ -1,37 +1,48 @@
-using NUnit.Framework.Constraints;
 using UnityEngine;
+using Unity.Netcode;
 
-public class trameManager : MonoBehaviour
+public class trameManager : NetworkBehaviour
 {
     [SerializeField] private GameObject FirstSlide;
-    // [SerializeField] private GameObject FirstYesButton;
-    // [SerializeField] private GameObject NoButton;
     [SerializeField] private GameObject SecondSlide;
     [SerializeField] private GameObject ThirdSlide;
 
-
-    void Start()
+    private void Start()
     {
+        if (!IsOwner) return;
+
         Cursor.lockState = CursorLockMode.None;
         FirstSlide.SetActive(true);
     }
+
     public void yes()
     {
+        if (!IsOwner) return;
+
         FirstSlide.SetActive(false);
         SecondSlide.SetActive(true);
     }
+
     public void skip()
     {
+        if (!IsOwner) return;
+
         FirstSlide.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
+
     public void secondyes()
     {
+        if (!IsOwner) return;
+
         SecondSlide.SetActive(false);
         ThirdSlide.SetActive(true);
     }
+
     public void lastyes()
     {
+        if (!IsOwner) return;
+
         ThirdSlide.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }

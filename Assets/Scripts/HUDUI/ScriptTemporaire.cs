@@ -4,13 +4,15 @@ using UnityEngine.SceneManagement;
 public class ScriptTemporaire : MonoBehaviour
 {
     [SerializeField]private GameObject menuinventaire;
+    [SerializeField]private GameObject pausemenu;
+
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             Cursor.lockState = CursorLockMode.None; //Pour eviter de sortir de l'ecran
-            SceneManager.LoadSceneAsync(4);
+            pausemenu.SetActive(!pausemenu.activeSelf);
         }
 
         if(Input.GetKeyDown(KeyCode.E))

@@ -13,8 +13,9 @@ public class NetworkManagerUI : MonoBehaviour
     }
     public void Client()
     {
+        //NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("SampleScene");
         NetworkManager.Singleton.StartClient();
-        NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
     public void Host()
     {

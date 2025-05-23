@@ -512,7 +512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &84293881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1334,8 +1334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 810374708}
+  Thisplayer: {fileID: 0}
   Cam: {fileID: 0}
-  Counter: {fileID: 0}
+  hehasfinished: 0
+  EndEnigme: {fileID: 0}
 --- !u!114 &326131361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4774,7 +4776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1980680628
 RectTransform:
   m_ObjectHideFlags: 0
