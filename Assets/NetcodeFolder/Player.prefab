@@ -753,7 +753,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2516613811566751373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3ba8c0a59712d94d9b412dd99946d2e, type: 3}
   m_Name: 
@@ -761,6 +761,7 @@ MonoBehaviour:
   interaction_Info_UI: {fileID: 6294981593847667337}
   Thisplayer: {fileID: 7061351123471092358}
   Cam: {fileID: 5397300789229208588}
+  Counter: {fileID: 0}
   hehasfinished: 0
   EndEnigme: {fileID: 2298498286520841613}
   nextEnigme: {fileID: 4597914705986641074}
@@ -5240,6 +5241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234a0c6f7ee715c4586f7ecd50cb276f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  epee: {fileID: 7942729531383743615}
+  swordOn: 0
+  inventory: {fileID: 8370541837042138871}
+  left_UI: {fileID: 522324017197663036}
+  inventorySlotPrefab: {fileID: 2265699636890014005, guid: dace9cd8855f3364eac72e6d7d41dcd2, type: 3}
+  inventoryPanel: {fileID: 4257603173939067480}
   ShowTopMostFoldoutHeaderGroup: 1
   FirstSlide: {fileID: 5872643960032829619}
   SecondSlide: {fileID: 8768471191239912903}

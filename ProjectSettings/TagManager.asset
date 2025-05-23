@@ -11,6 +11,8 @@ TagManager:
   - TpEliott
   - TpThiago
   - TpAmine
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
