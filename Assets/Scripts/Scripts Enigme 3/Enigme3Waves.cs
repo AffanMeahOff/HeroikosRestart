@@ -25,10 +25,10 @@ public class Enigme3Waves : MonoBehaviour
     public bool enigme3Finished = false;
 
     [SerializeField] GameObject Group1;
-    //[SerializeField] GameObject Group2;
-    //[SerializeField] GameObject Group3;
-    //[SerializeField] GameObject Group4;
-    //[SerializeField] GameObject Group5;
+    [SerializeField] GameObject Group2;
+    [SerializeField] GameObject Group3;
+    [SerializeField] GameObject Group4;
+    [SerializeField] GameObject Group5;
     private int tobeat;
 
     public Enigme3Timer Timer;
@@ -72,6 +72,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave2;
                 Transition();
                 CurrentWave.SetActive(true);
+                Group2.SetActive(true);
             }
             else if (wave1Finished && !wave2Finished && beaten == 4)
             {
@@ -80,6 +81,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave3;
                 Transition();
                 CurrentWave.SetActive(true);
+                Group3.SetActive(true);
             }
             else if (wave1Finished && wave2Finished && !wave3Finished && beaten == 3)
             {
@@ -88,6 +90,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave4;
                 Transition();
                 CurrentWave.SetActive(true);
+                Group4.SetActive(true);
             }
             else if (wave1Finished && wave2Finished && wave3Finished && !wave4Finished && beaten == 2)
             {
@@ -96,12 +99,14 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave = Wave5;
                 Transition();
                 CurrentWave.SetActive(true);
+                Group5.SetActive(true);
             }
             else if (wave1Finished && wave2Finished && wave3Finished && wave4Finished && beaten == 1)
             {
                 CurrentWave.SetActive(false);
                 Victory.SetActive(true);
                 enigme3won = true;
+                Timer.PauseTimer();
             }
         }
         enigme3Finished = enigme3won || enigme3lost;

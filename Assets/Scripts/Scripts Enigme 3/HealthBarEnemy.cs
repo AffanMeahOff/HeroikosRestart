@@ -7,10 +7,11 @@ public class HealthBarEnemy : MonoBehaviour
 
     [SerializeField] private Image healthBarImage;
     public bool IsDead;
-    private float currentHealth = 60f;
-    private float maxHealth = 60f;
+    private float currentHealth;
+    public float maxHealth = 60f;
     void Start()
     {
+        currentHealth = maxHealth;
         IsDead = false;
     }
     public void TakeDamage(float amount)

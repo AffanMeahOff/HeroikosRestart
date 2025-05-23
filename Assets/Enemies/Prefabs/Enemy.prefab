@@ -2426,7 +2426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4716784362638802
 Transform:
   m_ObjectHideFlags: 0
@@ -2800,13 +2800,13 @@ Animator:
   m_GameObject: {fileID: 1330231571265528}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: 73269549f8f1e184394dcc0700fa56ee, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2903,7 +2903,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyName: Warrior
   enigme3Waves: {fileID: 0}
-  playerinarea: 0
+  isType1: 0
+  isType2: 0
+  isType3: 0
+  isType4: 0
+  isMinotaur: 0
+  Helmet: {fileID: 0}
+  Armor: {fileID: 0}
 --- !u!54 &5989795102207495124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7924,7 +7930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4099582210869022
 Transform:
   m_ObjectHideFlags: 0
@@ -8261,6 +8267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 5387246374459103126}
   IsDead: 0
+  maxHealth: 60
 --- !u!1 &4086955417225869600
 GameObject:
   m_ObjectHideFlags: 0
