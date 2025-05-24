@@ -6,7 +6,6 @@ public class Enigme3IO1 : MonoBehaviour
 
     [SerializeField] Enigme3Waves enigme3Waves;
     private HealthBarEnemy healthBar;
-    private Rigidbody rigid;
     private bool playerinarea;
 
     public bool isType1;
@@ -32,9 +31,7 @@ public class Enigme3IO1 : MonoBehaviour
         healthBar = GetComponentInChildren<HealthBarEnemy>();
         player = GameObject.FindWithTag("Player");
         sword = player.GetComponent<PlayerButtonScripts>();
-        move = GetComponent<MouvementEnnemi>();
-        rigid = GetComponentInChildren<Rigidbody>();
-        rigid.useGravity = true;
+        move = GetComponent<MouvementEnnemi>();        
         IsStun = false;
         NoHelmet = false;
         if (isMinotaur)

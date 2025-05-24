@@ -1,81 +1,93 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouvementEnnemi : MonoBehaviour
 {
     public float vitesse = 2f;
-    public float distanceSeuil = 3f;
+    public float distanceSeuil = 5f;
+    public float rotationSpeed = 360f;
+    public float chargeForce = 500f;
+    public float chargeDistanceThreshold = 5f;
+    public float chargeCooldown = 5f;
+    public float chargeDuration = 1f;
 
-    private Vector3 move;
+    private float chargeCooldownTimer = 0f;
+    private float chargeTimer = 0f;
+    private bool isCharging = false;
+    private Vector3 chargeDirection;
     private Transform player;
     public Transform forwardPoint;
-
-    public bool attacking;
-
     private Animator animator;
+    private Rigidbody rb;
+
+    private bool attacking;
 
     void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.isKinematic = true;
+            rb.isKinematic = false;
+            rb.useGravity = true;
         }
-
         animator = GetComponent<Animator>();
+        if (animator == null) Debug.LogWarning("Animator component missing.");
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-        {
-            player = playerObj.transform;
-        }
-        else
-        {
-            Debug.LogWarning("No GameObject with tag 'Player' found.");
-        }
+        if (playerObj != null) player = playerObj.transform;
+        else Debug.LogWarning("No GameObject with tag 'Player' found.");
 
         if (forwardPoint == null)
         {
-            forwardPoint = this.transform;
+            Debug.LogWarning("forwardPoint not set. Defaulting to self.");
+            forwardPoint = transform;
         }
     }
 
     void Update()
     {
-        if (player == null) return;
+        if (player == null || animator == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Always face the player
+        if (chargeCooldownTimer > 0f)
+            chargeCooldownTimer -= Time.deltaTime;
+        if (isCharging)
+        {
+            chargeTimer -= Time.deltaTime;
+            if (chargeTimer <= 0f)
+            {
+                isCharging = false;
+                rb.linearVelocity = Vector3.zero; // stop motion after charge
+            }
+            return; // Skip other logic while charging
+        }
+        // Rotate toward the player
         Vector3 direction = (player.position - forwardPoint.position).normalized;
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, vitesse * 100 * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        // Update attack state from Animator
-        AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0); // Base Layer
-        attacking = currentState.IsName("Attack");
-
-        // If not attacking, handle movement and attack triggering
+        AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
+        attacking = currentState.IsName("Attack") || currentState.IsName("Charge"); ;
+        
         if (!attacking)
         {
-            if (distanceToPlayer > distanceSeuil)
+            if (distanceToPlayer <= chargeDistanceThreshold && chargeCooldownTimer <= 0f)
             {
-                // Move toward the player
-                move = player.position;
-                transform.position = Vector3.MoveTowards(transform.position, move, vitesse * Time.deltaTime);
+                PerformChargeAttack(direction);
+            }
+            else if (distanceToPlayer > distanceSeuil)
+            {
+                Debug.Log("Walking");
+                transform.position = Vector3.MoveTowards(transform.position, player.position, vitesse * Time.deltaTime);
                 animator.SetBool("IsWalking", true);
             }
             else
             {
-                // In range to attack, stop movement and trigger attack
+                Debug.Log("Attacking");
                 animator.SetBool("IsWalking", false);
-
-                // Prevent spamming the trigger
-                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                if (!currentState.IsName("Attack"))
                 {
                     animator.SetTrigger("Attack");
                 }
@@ -83,11 +95,21 @@ public class MouvementEnnemi : MonoBehaviour
         }
         else
         {
-            // If attacking, make sure the enemy is not walking or moving
             animator.SetBool("IsWalking", false);
         }
-        if(distanceToPlayer > distanceSeuil) animator.SetBool("IsWalking", true);
+    }
+    private void PerformChargeAttack(Vector3 direction)
+    {
+        Debug.Log("Charging with force!");
 
+        animator.SetTrigger("Charge");
+
+        chargeDirection = direction;
+        rb.linearVelocity = Vector3.zero;
+        rb.AddForce(chargeDirection * chargeForce, ForceMode.Impulse);
+
+        isCharging = true;
+        chargeTimer = chargeDuration;
+        chargeCooldownTimer = chargeCooldown;
     }
 }
-
