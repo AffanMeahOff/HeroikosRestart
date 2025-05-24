@@ -1337,8 +1337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ba8c0a59712d94d9b412dd99946d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   interaction_Info_UI: {fileID: 810374708}
+  Thisplayer: {fileID: 0}
   Cam: {fileID: 0}
+  hehasfinished: 0
+  EndEnigme: {fileID: 0}
+  nextEnigme: {fileID: 0}
 --- !u!114 &326131361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,7 +2262,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889991508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
