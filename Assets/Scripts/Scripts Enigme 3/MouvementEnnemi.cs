@@ -8,11 +8,11 @@ public class MouvementEnnemi : MonoBehaviour
     public bool ischarger;
     public float damage;
     public float chargedamage;
-    public float chargeForce = 500f;
+    public float chargeForce = 5f;
     public float chargeDistanceThreshold = 5f;
     public float chargeCooldown = 5f;
-    public float chargeDuration = 1f;
-    private bool isStunned = false;
+    public float chargeDuration = 4f;
+    public bool isStunned = false;
     private float stunTimer = 0f;
     private PlayerHealth healthplayer;
     private float chargeCooldownTimer = 0f;
@@ -24,7 +24,7 @@ public class MouvementEnnemi : MonoBehaviour
     private Animator animator;
     private Rigidbody rb;
 
-    private bool attacking;
+    public bool attacking;
 
     void Start()
     {
@@ -128,7 +128,6 @@ public class MouvementEnnemi : MonoBehaviour
         chargeDirection = direction;
         chargeDirection.y = 0f;
         chargeDirection = chargeDirection.normalized;
-        rb.linearVelocity = Vector3.zero;
         rb.AddForce(chargeDirection * chargeForce, ForceMode.Impulse);
 
         isCharging = true;

@@ -48,6 +48,7 @@ public class Enigme3IO1 : MonoBehaviour
 
     void Update()
     {
+        attacking = move.attacking;
         if (Horns != null)
         {
             OnHorns = Horns.OnHorns;
@@ -63,7 +64,8 @@ public class Enigme3IO1 : MonoBehaviour
         }
         if (sword.GetBlocking() && playerinarea && attacking)
         {
-            IsStun = true;
+            move.Stun(5f);
+            IsStun = move.isStunned;
         }
         if (armorleft == 0) NoArmor = true;
         if (Input.GetKeyDown(KeyCode.Mouse0) && playerinarea && healthBar != null)

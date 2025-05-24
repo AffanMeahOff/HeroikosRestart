@@ -2171,7 +2171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 810374708}
   Cam: {fileID: 961739752}
-  Waves: {fileID: 1327291428}
+  hehasfinished: 0
+  nextEnigme: {fileID: 0}
 --- !u!114 &326131364
 MonoBehaviour:
   m_ObjectHideFlags: 0

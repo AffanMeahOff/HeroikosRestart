@@ -4072,8 +4072,10 @@ MonoBehaviour:
   chargeForce: 5
   chargeDistanceThreshold: 9
   chargeCooldown: 5
-  chargeDuration: 1
+  chargeDuration: 4
+  isStunned: 0
   forwardPoint: {fileID: 5830832627108124414}
+  attacking: 0
 --- !u!114 &790241085791724017
 MonoBehaviour:
   m_ObjectHideFlags: 0
