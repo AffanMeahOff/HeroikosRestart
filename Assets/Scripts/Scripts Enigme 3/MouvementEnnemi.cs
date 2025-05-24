@@ -5,12 +5,15 @@ using UnityEngine;
 public class MouvementEnnemi : MonoBehaviour
 {
     public float vitesse = 2f;
-    public float distanceSeuil = 3f; // Stop this close to attack
-    public LayerMask solLayer;
+    public float distanceSeuil = 3f;
 
     private Vector3 move;
     private Transform player;
     public Transform forwardPoint;
+
+    public bool attacking;
+
+    private Animator animator;
 
     void Start()
     {
@@ -19,6 +22,8 @@ public class MouvementEnnemi : MonoBehaviour
         {
             rb.isKinematic = true;
         }
+
+        animator = GetComponent<Animator>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -30,7 +35,6 @@ public class MouvementEnnemi : MonoBehaviour
             Debug.LogWarning("No GameObject with tag 'Player' found.");
         }
 
-        // Fallback: use transform as forwardPoint if not set
         if (forwardPoint == null)
         {
             forwardPoint = this.transform;
@@ -43,7 +47,7 @@ public class MouvementEnnemi : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // Rotate toward the player at all times
+        // Always face the player
         Vector3 direction = (player.position - forwardPoint.position).normalized;
         if (direction != Vector3.zero)
         {
@@ -51,18 +55,39 @@ public class MouvementEnnemi : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, vitesse * 100 * Time.deltaTime);
         }
 
-        // Only move if outside attack range
-        if (distanceToPlayer > distanceSeuil)
+        // Update attack state from Animator
+        AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0); // Base Layer
+        attacking = currentState.IsName("Attack");
+
+        // If not attacking, handle movement and attack triggering
+        if (!attacking)
         {
-            move = player.position;
-            transform.position = Vector3.MoveTowards(transform.position, move, vitesse * Time.deltaTime);
+            if (distanceToPlayer > distanceSeuil)
+            {
+                // Move toward the player
+                move = player.position;
+                transform.position = Vector3.MoveTowards(transform.position, move, vitesse * Time.deltaTime);
+                animator.SetBool("IsWalking", true);
+            }
+            else
+            {
+                // In range to attack, stop movement and trigger attack
+                animator.SetBool("IsWalking", false);
+
+                // Prevent spamming the trigger
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                {
+                    animator.SetTrigger("Attack");
+                }
+            }
         }
         else
         {
-            // Optional: Trigger attack animation here
-            move = Vector3.zero;
-            //Debug.Log("Enemy is close enough to attack!");
-            // GetComponent<Animator>().SetTrigger("Attack");
+            // If attacking, make sure the enemy is not walking or moving
+            animator.SetBool("IsWalking", false);
         }
+        if(distanceToPlayer > distanceSeuil) animator.SetBool("IsWalking", true);
+
     }
 }
+
