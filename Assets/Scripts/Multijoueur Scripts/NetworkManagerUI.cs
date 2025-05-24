@@ -57,7 +57,7 @@ public class NetworkManagerUI : MonoBehaviour
     public void Host()
     {
        NetworkManager.Singleton.StartHost();
-       NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+       SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
     public void ReturnMenu()
     {
