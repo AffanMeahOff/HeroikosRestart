@@ -6,24 +6,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
-public class Enigme1Manager : MonoBehaviour
+public class Enigme1Manager : NetworkBehaviour
 {
-
     public GameObject interaction_Info_UI;
     public GameObject Thisplayer;
-
     public Camera Cam;
 
     private Enigme1Counter Counter;
     TMP_Text interaction_text;
 
     public bool hehasfinished = false;
+    private bool sceneLoadingStarted = false;
 
     [SerializeField] private GameObject EndEnigme;
     [SerializeField] private GameObject nextEnigme;
-
 
     private void Start()
     {
@@ -39,44 +36,66 @@ public class Enigme1Manager : MonoBehaviour
 
     void Update()
     {
+        if (!IsServer) return; 
+
+        if (sceneLoadingStarted) return;
+
         Counter = FindAnyObjectByType(typeof(Enigme1Counter)) as Enigme1Counter;
-        bool finished = false;
-        if (Counter is not null)
-        {
-            finished = Counter.enigme1Finished;
-        }
-        if (Counter is not null && finished)
+        if (Counter != null && Counter.enigme1Finished)
         {
             hehasfinished = true;
+            sceneLoadingStarted = true;
+
+            NetworkManager.Singleton.SceneManager.OnLoadComplete += OnSceneLoaded;
             NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-            Thisplayer.transform.position = new Vector3(194, 5, 203);
-            Physics.SyncTransforms();
             Cursor.lockState = CursorLockMode.None;
             EndEnigme.SetActive(true);
         }
-        Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            var selectionTransform = hit.transform;
 
-            if (selectionTransform.GetComponent<Enigme1IO1>())
+        if (IsClient)
+        {
+            Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                interaction_text.text = selectionTransform.GetComponent<Enigme1IO1>().GetItemName();
-                interaction_Info_UI.SetActive(true);
-            }
-            else
-            {
-                interaction_Info_UI.SetActive(false);
+                var selectionTransform = hit.transform;
+                if (selectionTransform.GetComponent<Enigme1IO1>())
+                {
+                    interaction_text.text = selectionTransform.GetComponent<Enigme1IO1>().GetItemName();
+                    interaction_Info_UI.SetActive(true);
+                }
+                else
+                {
+                    interaction_Info_UI.SetActive(false);
+                }
             }
         }
     }
+
+    private void OnSceneLoaded(ulong clientId, string sceneName, LoadSceneMode mode)
+    {
+        if (sceneName != "SampleScene") return;
+
+        foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+        {
+            var player = client.PlayerObject;
+            if (player != null)
+            {
+                Debug.Log("tped");
+                player.transform.position = new Vector3(194, 5, 203);
+            }
+        }
+
+        Physics.SyncTransforms();
+        NetworkManager.Singleton.SceneManager.OnLoadComplete -= OnSceneLoaded;
+    }
+
     public void ok()
     {
         EndEnigme.SetActive(false);
         nextEnigme.SetActive(true);
-        //Cursor.lockState = CursorLockMode.Locked;
     }
+
     public void wecango()
     {
         nextEnigme.SetActive(false);
