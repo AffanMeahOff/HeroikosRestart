@@ -34,10 +34,10 @@ public class playerProtectScript : NetworkBehaviour
         {
             transform.position = new Vector3(679, 600, 308);
         }
-        else if (transform.position.y < secu || enigme1Manager.hehasfinished)
+        else if (transform.position.y < secu)
         {
             Debug.Log("reset");
-            enigme1Manager.hehasfinished = false;
+            //enigme1Manager.hehasfinished = false;
             transform.position = respawnPosition;
             Rigidbody rb = GetComponent<Rigidbody>();
             if (rb != null)
