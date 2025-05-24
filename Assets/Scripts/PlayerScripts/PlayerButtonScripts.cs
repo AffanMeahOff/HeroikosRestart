@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PlayerButtonScripts : MonoBehaviour
     public InventaireUI left_UI; 
     public GameObject inventorySlotPrefab;
     public Transform inventoryPanel;
+    private bool isBlocking;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -25,7 +27,23 @@ public class PlayerButtonScripts : MonoBehaviour
             epee.SetActive(!epee.activeSelf);
             UpdateUI();
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1) && swordOn && epee.activeSelf)
+        {
+            epee.transform.Rotate(new UnityEngine.Vector3(-90, -9.5f, -77.5f));
+            epee.transform.position = new UnityEngine.Vector3(-0.5f, 0.9f, 2.5f);
+            isBlocking = true;
+        }
+        else
+        {
+            epee.transform.Rotate(new UnityEngine.Vector3(30, -45f, 0));
+            epee.transform.position = new UnityEngine.Vector3(0, 0, 2.4f);
+            isBlocking = false;
+        }
         
+    }
+    public bool GetBlocking()
+    {
+        return isBlocking;
     }
     public void Start()
     {
