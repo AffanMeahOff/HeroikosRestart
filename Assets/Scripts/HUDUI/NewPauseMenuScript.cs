@@ -99,7 +99,8 @@ public class NewPauseMenuScript : MonoBehaviour
     }
     public void MultiplayerPannel()
     {
-        SceneManager.LoadSceneAsync(2);
+        NetworkManager.Singleton.Shutdown();
+        SceneManager.LoadSceneAsync(3);
     }
     public void ResumeGame()
     {
