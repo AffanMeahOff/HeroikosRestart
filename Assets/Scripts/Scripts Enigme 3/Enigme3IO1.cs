@@ -43,21 +43,18 @@ public class Enigme3IO1 : MonoBehaviour
     void Update()
     {
         attacking = move.attacking;
-        if (sword.GetBlocking() && playerinarea && attacking)
-        {
-            move.Stun(5f);
-            IsStun = move.isStunned;
-        }
-        if (armorleft == 0) NoArmor = true;
-        if (Input.GetKeyDown(KeyCode.Mouse0) && playerinarea && healthBar != null)
+        if (playerinarea) Debug.Log("Player in area");
+        if (Input.GetKeyDown(KeyCode.Mouse0) && healthBar != null)
         {
             healthBar.TakeDamage(20f);
         }
         if (healthBar.IsDead)
         {
             enigme3Waves.beaten = 1;
+
+            enigme3Waves.immediate_victor = true;
+            if (enigme3Waves.enigme3Finished) Debug.Log("Enigme 3 finished");
             Destroy(gameObject);
-            if (isMinotaur) enigme3Waves.enigme3Finished = true;
         }
     }
     private void OnTriggerEnter(Collider other)

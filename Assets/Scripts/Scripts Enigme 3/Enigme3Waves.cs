@@ -23,6 +23,7 @@ public class Enigme3Waves : MonoBehaviour
     private bool enigme3won = false;
     private bool enigme3lost = false;
     public bool enigme3Finished = false;
+    public bool immediate_victor = false;
 
     [SerializeField] GameObject Group1;
     [SerializeField] GameObject Group2;
@@ -101,7 +102,7 @@ public class Enigme3Waves : MonoBehaviour
                 CurrentWave.SetActive(true);
                 Group5.SetActive(true);
             }
-            else if (wave1Finished && wave2Finished && wave3Finished && wave4Finished && beaten == 1)
+            else if (immediate_victor || wave1Finished && wave2Finished && wave3Finished && wave4Finished && beaten == 1)
             {
                 CurrentWave.SetActive(false);
                 Victory.SetActive(true);

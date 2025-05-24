@@ -2121,7 +2121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 326131358}
   - component: {fileID: 326131361}
-  - component: {fileID: 326131363}
   - component: {fileID: 326131364}
   m_Layer: 0
   m_Name: GameManagerObj
@@ -2157,22 +2156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7532e0328c02e9a418b9b7a36b84699b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &326131363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326131356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0eb170b0df7b164ba261686ebee4dd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction_Info_UI: {fileID: 810374708}
-  Cam: {fileID: 961739752}
-  hehasfinished: 0
-  nextEnigme: {fileID: 0}
 --- !u!114 &326131364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10816,7 +10799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2046847493
 Transform:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class Enigme3Manager : MonoBehaviour
 
     TMP_Text interaction_text;
     private bool sceneLoadingStarted = false;
+    private bool finished;
 
     [SerializeField] private GameObject nextEnigme;
     private void Start()
@@ -29,7 +30,7 @@ public class Enigme3Manager : MonoBehaviour
 
     void Update()
     {
-        bool finished = Waves.enigme3Finished;
+        if (Waves != null) { finished = Waves.enigme3Finished; }
         if (finished)
         {
             sceneLoadingStarted = true;
