@@ -15,8 +15,9 @@ public class playerProtectScript : NetworkBehaviour
     public Vector3 respawnPosition = new Vector3(217f, 50f, 190f);
 
     public GameObject endscreen;
+    public Enigme1Manager enigme1Manager;
 
-    // Update is called once per frame
+
     void Update()
     {
         string sceneName = SceneManager.GetActiveScene().name;
@@ -31,10 +32,12 @@ public class playerProtectScript : NetworkBehaviour
         }
         else if (sceneName == "Enigme3" && transform.position.y < secu || sceneName == "Enigme4" && transform.position.y < secu)
         {
-            transform.position = new Vector3(679, 560, 308);
+            transform.position = new Vector3(679, 600, 308);
         }
-        else if (transform.position.y < secu)
+        else if (transform.position.y < secu || enigme1Manager.hehasfinished)
         {
+            Debug.Log("reset");
+            enigme1Manager.hehasfinished = false;
             transform.position = respawnPosition;
             Rigidbody rb = GetComponent<Rigidbody>();
             if (rb != null)
@@ -53,6 +56,11 @@ public class playerProtectScript : NetworkBehaviour
         if (other.CompareTag("Death"))
         {
             transform.position = respawnPosition;
+        }
+        if (other.CompareTag("retp"))
+        {
+            Debug.Log("Dead");
+            transform.position = new Vector3(1100, 563, 84);
         }
     }
     public void yes()
