@@ -7,8 +7,11 @@ public class NewPauseMenuScript : MonoBehaviour
 {
     [SerializeField]private GameObject PauseMenu;
     [SerializeField]private GameObject map;
+    
+    [SerializeField]private GameObject Settings;
 
-    [SerializeField]private GameObject player;
+
+    [SerializeField] private GameObject player;
 
     public bool IsPause;
     void Start()
@@ -49,6 +52,14 @@ public class NewPauseMenuScript : MonoBehaviour
     public void closeMap()
     {
         map.SetActive(false);
+    }
+    public void oset()
+    {
+        Settings.SetActive(true);
+    }
+    public void cset()
+    {
+        Settings.SetActive(false);
     }
 
     public void Enigme1()
