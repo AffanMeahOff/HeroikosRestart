@@ -1,4 +1,3 @@
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +13,10 @@ public class PlayerButtonScripts : MonoBehaviour
     public GameObject inventorySlotPrefab;
     public Transform inventoryPanel;
     private bool isBlocking;
+    private bool hasrotated = false;
+    private bool hasmoved = false;
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -21,25 +24,49 @@ public class PlayerButtonScripts : MonoBehaviour
             Debug.Log("added 9");
             Counter.collected += 9;
         }
+
         swordOn = enigme1Manager != null && enigme1Manager.hehasfinished;
+
         if (Input.GetKeyDown(KeyCode.F) && swordOn)
         {
             epee.SetActive(!epee.activeSelf);
             UpdateUI();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && swordOn && epee.activeSelf)
+
+        if (Input.GetKey(KeyCode.Mouse1) && epee.activeSelf) EnterBlockingStance();
+        else ExitBlockingStance();
+
+    }
+
+    void EnterBlockingStance()
+    {
+        if (!hasrotated)
         {
-            epee.transform.Rotate(new UnityEngine.Vector3(-90, -9.5f, -77.5f));
-            epee.transform.position = new UnityEngine.Vector3(-0.5f, 0.9f, 2.5f);
-            isBlocking = true;
+            epee.transform.localRotation = Quaternion.Euler(-90f, -9.5f, -77.5f);
+            hasrotated = true;
         }
-        else
+        if (!hasmoved)
         {
-            epee.transform.Rotate(new UnityEngine.Vector3(30, -45f, 0));
-            epee.transform.position = new UnityEngine.Vector3(0, 0, 2.4f);
-            isBlocking = false;
+            epee.transform.localPosition = new Vector3(-0.75f, 0.9f, 2.5f);
+            hasmoved = true;
         }
-        
+        isBlocking = true;
+        Debug.Log("Blocking");
+    }
+
+    void ExitBlockingStance()
+    {
+        if (hasrotated)
+        {
+            epee.transform.localRotation = originalRotation;
+            hasrotated = false;
+        }
+        if (hasmoved)
+        {
+            epee.transform.localPosition = originalPosition;
+            hasmoved = false;
+        }
+        isBlocking = false;
     }
     public bool GetBlocking()
     {
@@ -49,6 +76,8 @@ public class PlayerButtonScripts : MonoBehaviour
     {
         Counter = FindAnyObjectByType<Enigme1Counter>();
         epee.SetActive(false);
+        originalPosition = epee.transform.localPosition;
+        originalRotation = epee.transform.localRotation;
         UpdateUI();
     }
 
