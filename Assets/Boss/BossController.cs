@@ -42,6 +42,7 @@ public class BossController : MonoBehaviour
 
     void ShowEndScreen()
     {
+    if (endGameCanvas != null)
         endGameCanvas.SetActive(true);
     }
 }
