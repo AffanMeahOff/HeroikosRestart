@@ -33,12 +33,6 @@ public class Enigme3IO1 : MonoBehaviour
         sword = player.GetComponent<PlayerButtonScripts>();
         move = GetComponent<MouvementEnnemi>();        
         IsStun = false;
-        NoHelmet = false;
-        if (isMinotaur)
-        {
-            Horns = GetComponentInChildren<MinotaurHorns>();
-            OnHorns = Horns.OnHorns;
-        }
     }
 
     public string GetEnemyName()
@@ -49,19 +43,6 @@ public class Enigme3IO1 : MonoBehaviour
     void Update()
     {
         attacking = move.attacking;
-        if (Horns != null)
-        {
-            OnHorns = Horns.OnHorns;
-            if (Horns != null && Input.GetKeyDown(KeyCode.Mouse0) && OnHorns)
-            {
-                Horns.TakeDamage(20f);
-            }
-            if (Horns != null && Horns.IsDead)
-            {
-                Horns.Die();
-                NoHelmet = true;
-            }
-        }
         if (sword.GetBlocking() && playerinarea && attacking)
         {
             move.Stun(5f);
@@ -70,18 +51,7 @@ public class Enigme3IO1 : MonoBehaviour
         if (armorleft == 0) NoArmor = true;
         if (Input.GetKeyDown(KeyCode.Mouse0) && playerinarea && healthBar != null)
         {
-            if (!isType4 && !isMinotaur && IsStun)
-            {
-                healthBar.TakeDamage(20f);
-            }
-            else if (isType4 && NoArmor)
-            {
-                healthBar.TakeDamage(20f);
-            }
-            else if (isMinotaur && NoHelmet)
-            {
-                healthBar.TakeDamage(20f);
-            }
+            healthBar.TakeDamage(20f);
         }
         if (healthBar.IsDead)
         {
@@ -94,12 +64,6 @@ public class Enigme3IO1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerinarea = true;
-        }
-        if (other.CompareTag("Wall") && armorleft > 0 && isType4)
-        {
-            if (armorleft == 2) Destroy(Helmet);
-            else Destroy(Armor);
-            armorleft--;
         }
     }
 
