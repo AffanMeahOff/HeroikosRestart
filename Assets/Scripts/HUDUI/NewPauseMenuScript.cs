@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
 public class NewPauseMenuScript : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class NewPauseMenuScript : MonoBehaviour
     }
     public void ExitGame()
     {
+        NetworkManager.Singleton.Shutdown();
         SceneManager.LoadSceneAsync(1);
     }
     public void OpenMap()
