@@ -23,10 +23,16 @@ public class Enigme3IO1 : MonoBehaviour
     public GameObject Armor = null;
     private bool attacking;
     private int armorleft = 2;
+    private GameObject player;
+    private PlayerButtonScripts sword;
+    private MouvementEnnemi move;
 
     void Start()
     {
         healthBar = GetComponentInChildren<HealthBarEnemy>();
+        player = GameObject.FindWithTag("Player");
+        sword = player.GetComponent<PlayerButtonScripts>();
+        move = GetComponent<MouvementEnnemi>();
         rigid = GetComponentInChildren<Rigidbody>();
         rigid.useGravity = true;
         IsStun = false;
@@ -58,7 +64,7 @@ public class Enigme3IO1 : MonoBehaviour
                 NoHelmet = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.B) && playerinarea && attacking)
+        if (sword.GetBlocking() && playerinarea && attacking)
         {
             IsStun = true;
         }
