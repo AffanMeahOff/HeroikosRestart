@@ -12,6 +12,9 @@ public class Enigme3Manager : MonoBehaviour
 {
 
     public GameObject interaction_Info_UI;
+
+    public GameObject endenigme2;
+
     public Camera Cam;
 
     private Enigme3Waves Waves;
@@ -54,6 +57,13 @@ public class Enigme3Manager : MonoBehaviour
                 interaction_Info_UI.SetActive(false);
             }
         }
+        if (finished)
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            Cursor.lockState = CursorLockMode.None;
+            endenigme2.SetActive(true);
+            finished = false;
+        }
     }
     private void OnSceneLoaded(ulong clientId, string sceneName, LoadSceneMode mode)
     {
@@ -71,5 +81,10 @@ public class Enigme3Manager : MonoBehaviour
 
         Physics.SyncTransforms();
         NetworkManager.Singleton.SceneManager.OnLoadComplete -= OnSceneLoaded;
+    }
+    public void ok()
+    {
+        endenigme2.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
