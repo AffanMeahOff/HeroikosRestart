@@ -35,7 +35,7 @@ public class playerProtectScript : NetworkBehaviour
         else if (sceneName == "Enigme3" && transform.position.y < secu || sceneName == "Enigme4" && transform.position.y < secu || health.health == 0)
         {
             transform.position = new Vector3(634, 557, 107);
-            health.health += 100;
+            health.health = 500;
         }
         else if (transform.position.y < secu)
         {
