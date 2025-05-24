@@ -5,11 +5,16 @@ public class MouvementEnnemi : MonoBehaviour
     public float vitesse = 2f;
     public float distanceSeuil = 5f;
     public float rotationSpeed = 360f;
+    public bool ischarger;
+    public float damage;
+    public float chargedamage;
     public float chargeForce = 500f;
     public float chargeDistanceThreshold = 5f;
     public float chargeCooldown = 5f;
     public float chargeDuration = 1f;
-
+    private bool isStunned = false;
+    private float stunTimer = 0f;
+    private PlayerHealth healthplayer;
     private float chargeCooldownTimer = 0f;
     private float chargeTimer = 0f;
     private bool isCharging = false;
@@ -23,6 +28,7 @@ public class MouvementEnnemi : MonoBehaviour
 
     void Start()
     {
+        healthplayer = player.GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -48,18 +54,30 @@ public class MouvementEnnemi : MonoBehaviour
         if (player == null || animator == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (chargeCooldownTimer > 0f)
-            chargeCooldownTimer -= Time.deltaTime;
-        if (isCharging)
+        if (isStunned)
         {
-            chargeTimer -= Time.deltaTime;
-            if (chargeTimer <= 0f)
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
             {
-                isCharging = false;
-                rb.linearVelocity = Vector3.zero; // stop motion after charge
+                isStunned = false;
             }
-            return; // Skip other logic while charging
+            return; // Skip all other behavior
         }
+        if (ischarger)
+        {
+            if (chargeCooldownTimer > 0f)
+                chargeCooldownTimer -= Time.deltaTime;
+            if (isCharging)
+            {
+                chargeTimer -= Time.deltaTime;
+                if (chargeTimer <= 0f)
+                {
+                    StopCharge();
+                }
+                return; // Skip other logic while charging
+            }
+        }
+
         // Rotate toward the player
         Vector3 direction = (player.position - forwardPoint.position).normalized;
         if (direction != Vector3.zero)
@@ -70,10 +88,10 @@ public class MouvementEnnemi : MonoBehaviour
 
         AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
         attacking = currentState.IsName("Attack") || currentState.IsName("Charge"); ;
-        
+
         if (!attacking)
         {
-            if (distanceToPlayer <= chargeDistanceThreshold && chargeCooldownTimer <= 0f)
+            if (ischarger && distanceToPlayer <= chargeDistanceThreshold && chargeCooldownTimer <= 0f)
             {
                 PerformChargeAttack(direction);
             }
@@ -91,6 +109,7 @@ public class MouvementEnnemi : MonoBehaviour
                 {
                     animator.SetTrigger("Attack");
                 }
+                if (distanceToPlayer > distanceSeuil) healthplayer.TakeDamage(damage);
             }
         }
         else
@@ -111,5 +130,39 @@ public class MouvementEnnemi : MonoBehaviour
         isCharging = true;
         chargeTimer = chargeDuration;
         chargeCooldownTimer = chargeCooldown;
+    }
+    private void StopCharge()
+    {
+        isCharging = false;
+        rb.linearVelocity = Vector3.zero;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isCharging)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Hit Player during charge!");
+                healthplayer.TakeDamage(chargedamage);
+            }
+            else if (collision.gameObject.CompareTag("Wall"))
+            {
+                Debug.Log("Hit wall during charge!");
+                Stun(10f);
+            }
+
+            StopCharge(); // Stop immediately after any collision
+        }
+    }
+    public void Stun(float duration)
+    {
+        Debug.Log("Enemy is stunned!");
+
+        isStunned = true;
+        stunTimer = duration;
+        rb.linearVelocity = Vector3.zero;
+        isCharging = false;
+
+        animator.SetBool("IsWalking", false);
     }
 }
