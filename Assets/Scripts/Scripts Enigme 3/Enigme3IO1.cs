@@ -57,6 +57,7 @@ public class Enigme3IO1 : MonoBehaviour
         {
             enigme3Waves.beaten = 1;
             Destroy(gameObject);
+            if (isMinotaur) enigme3Waves.enigme3Finished = true;
         }
     }
     private void OnTriggerEnter(Collider other)
