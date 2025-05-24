@@ -15,6 +15,8 @@ public class playerProtectScript : NetworkBehaviour
     public Vector3 respawnPosition = new Vector3(217f, 50f, 190f);
 
     public GameObject endscreen;
+    public PlayerHealth health;
+
     public Enigme1Manager enigme1Manager;
 
 
@@ -30,9 +32,10 @@ public class playerProtectScript : NetworkBehaviour
         {
             transform.position = new Vector3(1100, 563, 84);
         }
-        else if (sceneName == "Enigme3" && transform.position.y < secu || sceneName == "Enigme4" && transform.position.y < secu)
+        else if (sceneName == "Enigme3" && transform.position.y < secu || sceneName == "Enigme4" && transform.position.y < secu || health.health == 0)
         {
-            transform.position = new Vector3(679, 600, 308);
+            transform.position = new Vector3(634, 557, 107);
+            health.health += 100;
         }
         else if (transform.position.y < secu)
         {
