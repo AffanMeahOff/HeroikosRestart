@@ -6,9 +6,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        Debug.Log($"[PlayerHealth] TakeDamage appelé avec {amount}");
         health -= amount;
-        Debug.Log("Le joueur prend " + amount + " dégâts. Santé restante : " + health);
-
+        Debug.Log($"[PlayerHealth] Nouvelle santé : {health}");
         if (health <= 0)
         {
             Die();
@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Le joueur est mort !");
-        // Ajoute ici la logique de mort : désactivation, anim, game over, etc.
+        // ... logique de mort ...
     }
 }
 
