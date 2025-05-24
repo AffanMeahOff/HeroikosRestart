@@ -33,7 +33,7 @@ public class Enigme1Counter : MonoBehaviour
         {
         }
     
-        enigme1Finished = collected >= 1;
+        enigme1Finished = collected >= 10;
         
     }
 
