@@ -28,7 +28,7 @@ public class MouvementEnnemi : MonoBehaviour
 
     void Start()
     {
-        healthplayer = player.GetComponent<PlayerHealth>();
+        
         rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -41,7 +41,7 @@ public class MouvementEnnemi : MonoBehaviour
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) player = playerObj.transform;
         else Debug.LogWarning("No GameObject with tag 'Player' found.");
-
+        healthplayer = player.GetComponent<PlayerHealth>();
         if (forwardPoint == null)
         {
             Debug.LogWarning("forwardPoint not set. Defaulting to self.");
