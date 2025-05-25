@@ -2,16 +2,24 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using Unity.Netcode;
+using UnityEngine.UI;
 
 public class NewPauseMenuScript : MonoBehaviour
 {
-    [SerializeField]private GameObject PauseMenu;
-    [SerializeField]private GameObject map;
-    
-    [SerializeField]private GameObject Settings;
+    [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private GameObject map;
+
+    [SerializeField] private GameObject Settings;
 
 
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource audioSource;
+    //[SerializeField] private AudioSource bossMusic;
+    //[SerializeField] private AudioSource krustals;
+    //[SerializeField] private AudioSource jump;
+    //[SerializeField] private AudioSource combat;
+    [SerializeField] private Slider slider;
+
 
     public bool IsPause;
     void Start()
@@ -23,12 +31,12 @@ public class NewPauseMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(IsPause)
+            if (IsPause)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 ResumeGame();
             }
-            else 
+            else
             {
                 Cursor.lockState = CursorLockMode.None;
                 PauseGame();
@@ -108,5 +116,9 @@ public class NewPauseMenuScript : MonoBehaviour
         map.SetActive(false);
         IsPause = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void changesoundlevel()
+    {
+        audioSource.volume = slider.value;
     }
 }

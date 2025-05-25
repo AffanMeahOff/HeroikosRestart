@@ -1,44 +1,58 @@
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class JoinWithoutHostDetector : MonoBehaviour
 {
     [SerializeField] private GameObject noHostWarningUI;
     [SerializeField] private Button joinButton;
 
+    private bool triedToConnect = false;
+
     private void Start()
     {
         noHostWarningUI.SetActive(false);
         joinButton.onClick.AddListener(JoinGame);
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
     }
 
     private void JoinGame()
     {
         noHostWarningUI.SetActive(false);
+        triedToConnect = true;
+        Debug.Log("clicked");
 
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
 
-        bool success = NetworkManager.Singleton.StartClient();
-
-        if (!success)
-        {
-                        ShowNoHostUI();
-        }
+        NetworkManager.Singleton.StartClient();
     }
 
-    private void OnClientDisconnected(ulong clientId)
+    private void OnClientConnected(ulong clientId)
     {
         if (clientId == NetworkManager.Singleton.LocalClientId)
         {
-            ShowNoHostUI();
+            Debug.Log("Connected to host.");
+            triedToConnect = false;
+            SceneManager.LoadScene("SampleScene");
+
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
         }
     }
 
-    private void ShowNoHostUI()
+
+    private void OnClientDisconnected(ulong clientId)
     {
-        noHostWarningUI.SetActive(true);
+        if (clientId == NetworkManager.Singleton.LocalClientId && triedToConnect)
+        {
+            Debug.Log("tried");
+            noHostWarningUI.SetActive(true);
+            triedToConnect = false;
+        }
     }
+
 
     private void OnDestroy()
     {
@@ -47,12 +61,9 @@ public class JoinWithoutHostDetector : MonoBehaviour
             NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
         }
     }
+
     public void closepan()
     {
         noHostWarningUI.SetActive(false);
     }
-
 }
-
-
-

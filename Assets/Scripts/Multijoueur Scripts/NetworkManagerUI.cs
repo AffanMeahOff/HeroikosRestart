@@ -21,27 +21,25 @@ public class NetworkManagerUI : MonoBehaviour
     public void setip()
     {
         var networkManager = FindAnyObjectByType<NetworkManager>();
-        if (networkManager == null) {
-            Debug.LogError("NetworkManager not found.");
+        if (networkManager == null)
+        {
             return;
         }
 
         var transport = networkManager.GetComponent<UnityTransport>();
-        if (transport == null) {
-            Debug.LogError("UnityTransport not found on NetworkManager.");
+        if (transport == null)
+        {
             return;
         }
 
         string ip = ipInput.text;
-        if (!ushort.TryParse(portInput.text, out ushort port)) {
-            Debug.LogWarning("Invalid port input.");
+        if (!ushort.TryParse(portInput.text, out ushort port))
+        {
             return;
         }
 
         transport.ConnectionData.Address = ip;
         transport.ConnectionData.Port = port;
-
-        Debug.Log($"IP set to {ip}, Port set to {port}");
     }
 
     public void exitServSet()
@@ -57,7 +55,7 @@ public class NetworkManagerUI : MonoBehaviour
     public void Host()
     {
        NetworkManager.Singleton.StartHost();
-       SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+       NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
     public void ReturnMenu()
     {
