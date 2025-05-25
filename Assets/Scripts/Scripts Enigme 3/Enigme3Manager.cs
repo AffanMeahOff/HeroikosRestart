@@ -32,7 +32,15 @@ public class Enigme3Manager : MonoBehaviour
 
     void Update()
     {
-        if (Waves != null) { finished = Waves.enigme3Finished; }
+        if (sceneLoadingStarted) return;
+        Waves = FindAnyObjectByType(typeof(Enigme3Waves)) as Enigme3Waves;
+        if (Waves != null)
+        {
+            finished = Waves.enigme3Finished;
+            Debug.Log("Found Waves");
+        }
+        else Debug.Log("Didn't find Waves");
+        
         if (finished)
         {
             hehasfinished = true;
