@@ -44,7 +44,7 @@ public class Enigme3IO1 : MonoBehaviour
     {
         attacking = move.attacking;
         //if (playerinarea) Debug.Log("Player in area");
-        if (Input.GetKeyDown(KeyCode.Mouse0) && healthBar != null)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && playerinarea && healthBar != null)
         {
             healthBar.TakeDamage(20f);
         }
