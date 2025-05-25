@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float health = 100f;
+    public bool Dead = false;
 
     public void TakeDamage(float amount)
     {
@@ -18,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Le joueur est mort !");
-        // ... logique de mort ...
+        Dead = true;
     }
 }
 

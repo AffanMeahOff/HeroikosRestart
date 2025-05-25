@@ -431,10 +431,6 @@ PrefabInstance:
       propertyPath: vitesse
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.22
@@ -1503,10 +1499,6 @@ PrefabInstance:
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: vitesse
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4592,10 +4584,6 @@ PrefabInstance:
       propertyPath: vitesse
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.22
@@ -4835,10 +4823,6 @@ PrefabInstance:
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: vitesse
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5813,10 +5797,6 @@ PrefabInstance:
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: vitesse
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6797,10 +6777,6 @@ PrefabInstance:
       propertyPath: vitesse
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.22
@@ -7009,10 +6985,6 @@ PrefabInstance:
       propertyPath: vitesse
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.22
@@ -7098,6 +7070,7 @@ MonoBehaviour:
   wave3Finished: 0
   wave4Finished: 0
   enigme3Finished: 0
+  playerdied: 0
   Group1: {fileID: 2127404017}
   Group2: {fileID: 1751633683}
   Group3: {fileID: 1420532198}
@@ -7486,10 +7459,6 @@ PrefabInstance:
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: vitesse
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8574,7 +8543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: distanceSeuil
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: chargeCooldown
@@ -8586,7 +8555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: chargeDistanceThreshold
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9300,10 +9269,6 @@ PrefabInstance:
       propertyPath: vitesse
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.22
@@ -9552,10 +9517,6 @@ PrefabInstance:
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: vitesse
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10655,10 +10616,6 @@ PrefabInstance:
       propertyPath: vitesse
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
-      propertyPath: distanceSeuil
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.22
@@ -11568,7 +11525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: distanceSeuil
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: chargeCooldown
@@ -11580,7 +11537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036770958237369077, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: chargeDistanceThreshold
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7334120793595943315, guid: fff6c60618b0bce458b0f63edfca1adb, type: 3}
       propertyPath: m_LocalPosition.y

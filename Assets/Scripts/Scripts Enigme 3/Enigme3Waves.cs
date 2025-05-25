@@ -23,7 +23,8 @@ public class Enigme3Waves : MonoBehaviour
     private bool enigme3won = false;
     private bool enigme3lost = false;
     public bool enigme3Finished = false;
-    //public bool immediate_victor = false;
+
+    public bool playerdied = false;
 
     [SerializeField] GameObject Group1;
     [SerializeField] GameObject Group2;
@@ -58,7 +59,7 @@ public class Enigme3Waves : MonoBehaviour
     private void Update()
     {
     
-        if (!enigme3won && Timer.isOver)
+        if (!enigme3won && (Timer.isOver || playerdied))
         {
             enigme3lost = true;
             CurrentWave.SetActive(false);
