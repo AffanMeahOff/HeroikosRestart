@@ -46,7 +46,6 @@ public class Enigme3Manager : MonoBehaviour
         {
             finished = true;
         }
-        if (Waves != null) { finished = Waves.enigme3Finished; }
         if (finished)
         {
             Debug.Log("finished");
