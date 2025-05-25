@@ -13,7 +13,6 @@ public class Enigme3Manager : MonoBehaviour
 
     public GameObject interaction_Info_UI;
 
-    public GameObject endenigme2;
 
     public Camera Cam;
 
@@ -61,7 +60,6 @@ public class Enigme3Manager : MonoBehaviour
         {
             NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
             Cursor.lockState = CursorLockMode.None;
-            endenigme2.SetActive(true);
             finished = false;
         }
     }
@@ -84,7 +82,6 @@ public class Enigme3Manager : MonoBehaviour
     }
     public void ok()
     {
-        endenigme2.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 }

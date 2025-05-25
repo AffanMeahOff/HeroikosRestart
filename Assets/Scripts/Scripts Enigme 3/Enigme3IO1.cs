@@ -43,7 +43,7 @@ public class Enigme3IO1 : MonoBehaviour
     void Update()
     {
         attacking = move.attacking;
-        if (playerinarea) Debug.Log("Player in area");
+        //if (playerinarea) Debug.Log("Player in area");
         if (Input.GetKeyDown(KeyCode.Mouse0) && healthBar != null)
         {
             healthBar.TakeDamage(20f);
@@ -51,9 +51,9 @@ public class Enigme3IO1 : MonoBehaviour
         if (healthBar.IsDead)
         {
             enigme3Waves.beaten = 1;
-
+            /*
             enigme3Waves.immediate_victor = true;
-            if (enigme3Waves.enigme3Finished) Debug.Log("Enigme 3 finished");
+            if (enigme3Waves.enigme3Finished) Debug.Log("Enigme 3 finished");*/
             Destroy(gameObject);
         }
     }

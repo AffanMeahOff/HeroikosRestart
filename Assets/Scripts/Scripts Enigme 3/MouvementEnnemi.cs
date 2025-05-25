@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+
 
 public class MouvementEnnemi : MonoBehaviour
 {
@@ -13,12 +15,18 @@ public class MouvementEnnemi : MonoBehaviour
     public float chargeCooldown = 5f;
     public float chargeDuration = 4f;
     public bool isStunned = false;
+    public float attackCooldown = 3f;           // Cooldown duration in seconds
+    private float attackCooldownTimer = 0f;     // Tracks cooldown state
+
     private float stunTimer = 0f;
-    private PlayerHealth healthplayer;
     private float chargeCooldownTimer = 0f;
     private float chargeTimer = 0f;
     private bool isCharging = false;
-    private Vector3 chargeDirection;
+
+    private Vector3 moveDirection = Vector3.zero;
+    private Vector3 chargeDirection = Vector3.zero;
+
+    private PlayerHealth healthplayer;
     private Transform player;
     public Transform forwardPoint;
     private Animator animator;
@@ -28,20 +36,22 @@ public class MouvementEnnemi : MonoBehaviour
 
     void Start()
     {
-        
         rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
         }
+
         animator = GetComponent<Animator>();
         if (animator == null) Debug.LogWarning("Animator component missing.");
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) player = playerObj.transform;
         else Debug.LogWarning("No GameObject with tag 'Player' found.");
+
         healthplayer = player.GetComponent<PlayerHealth>();
+
         if (forwardPoint == null)
         {
             Debug.LogWarning("forwardPoint not set. Defaulting to self.");
@@ -51,34 +61,37 @@ public class MouvementEnnemi : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Enemy Position: " + transform.position);
+        
         if (player == null || animator == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
         if (isStunned)
         {
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0f)
-            {
                 isStunned = false;
-            }
-            return; // Skip all other behavior
+            return;
         }
+        // Reduce attack cooldown timer
+        if (attackCooldownTimer > 0f)
+            attackCooldownTimer -= Time.deltaTime;
+
+        
         if (ischarger)
         {
             if (chargeCooldownTimer > 0f)
                 chargeCooldownTimer -= Time.deltaTime;
+
             if (isCharging)
             {
                 chargeTimer -= Time.deltaTime;
                 if (chargeTimer <= 0f)
-                {
                     StopCharge();
-                }
-                return; // Skip other logic while charging
+                return;
             }
         }
-
+        
         // Rotate toward the player
         Vector3 direction = (player.position - forwardPoint.position).normalized;
         if (direction != Vector3.zero)
@@ -88,37 +101,61 @@ public class MouvementEnnemi : MonoBehaviour
         }
 
         AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
-        attacking = currentState.IsName("Attack") || currentState.IsName("Charge"); ;
+        attacking = currentState.IsName("Attack") || currentState.IsName("Charge");
 
         if (!attacking)
         {
             if (ischarger && distanceToPlayer <= chargeDistanceThreshold && chargeCooldownTimer <= 0f)
             {
                 PerformChargeAttack(direction);
+                return;
             }
-            else if (distanceToPlayer > distanceSeuil)
-            {
-                Debug.Log("Walking");
             
-                transform.position = Vector3.MoveTowards(transform.position, player.position, vitesse * Time.deltaTime);
+            if (distanceToPlayer > distanceSeuil)
+            {
+                moveDirection = (player.position - transform.position).normalized;
+                moveDirection.y = 0f;
                 animator.SetBool("IsWalking", true);
             }
             else
             {
-                Debug.Log("Attacking");
+                moveDirection = Vector3.zero;
                 animator.SetBool("IsWalking", false);
-                if (!currentState.IsName("Attack"))
+                if (attackCooldownTimer <= 0f && !currentState.IsName("Attack"))
                 {
                     animator.SetTrigger("Attack");
+                    attackCooldownTimer = attackCooldown; // Reset cooldown
+                    if (distanceToPlayer <= distanceSeuil)
+                        healthplayer.TakeDamage(damage);
                 }
-                if (distanceToPlayer > distanceSeuil) healthplayer.TakeDamage(damage);
             }
         }
         else
         {
+            moveDirection = Vector3.zero;
             animator.SetBool("IsWalking", false);
         }
     }
+
+    void FixedUpdate()
+    {
+       
+
+        if (isStunned) return;
+
+        if (isCharging)
+        {
+            Vector3 movement = chargeDirection * chargeForce * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + movement);
+        }
+        else if (moveDirection != Vector3.zero)
+        {
+            Vector3 movement = moveDirection * vitesse * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + movement);
+            
+        }
+    }
+
     private void PerformChargeAttack(Vector3 direction)
     {
         Debug.Log("Charging with force!");
@@ -128,17 +165,19 @@ public class MouvementEnnemi : MonoBehaviour
         chargeDirection = direction;
         chargeDirection.y = 0f;
         chargeDirection = chargeDirection.normalized;
-        rb.AddForce(chargeDirection * chargeForce, ForceMode.Impulse);
 
         isCharging = true;
         chargeTimer = chargeDuration;
         chargeCooldownTimer = chargeCooldown;
     }
+
     private void StopCharge()
     {
+        Debug.Log("Stopped Charging");
         isCharging = false;
         rb.linearVelocity = Vector3.zero;
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (isCharging)
@@ -154,18 +193,17 @@ public class MouvementEnnemi : MonoBehaviour
                 Stun(10f);
             }
 
-            StopCharge(); // Stop immediately after any collision
+            StopCharge();
         }
     }
+
     public void Stun(float duration)
     {
         Debug.Log("Enemy is stunned!");
-
         isStunned = true;
         stunTimer = duration;
         rb.linearVelocity = Vector3.zero;
         isCharging = false;
-
         animator.SetBool("IsWalking", false);
     }
 }

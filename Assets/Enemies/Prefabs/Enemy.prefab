@@ -2888,13 +2888,16 @@ MonoBehaviour:
   distanceSeuil: 3
   rotationSpeed: 360
   ischarger: 0
-  damage: 0
+  damage: 20
   chargedamage: 0
-  chargeForce: 5
-  chargeDistanceThreshold: 5
-  chargeCooldown: 5
-  chargeDuration: 1
+  chargeForce: 0
+  chargeDistanceThreshold: 0
+  chargeCooldown: 0
+  chargeDuration: 0
+  isStunned: 0
+  attackCooldown: 3
   forwardPoint: {fileID: 7334120793595943315}
+  attacking: 0
 --- !u!114 &3564411225252842960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2962,8 +2965,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3.5, z: 3}
-  m_Center: {x: 0, y: 0, z: 1}
+  m_Size: {x: 2.5, y: 2, z: 2.5}
+  m_Center: {x: 0, y: 1, z: 0.5}
 --- !u!136 &69039719603119934
 CapsuleCollider:
   m_ObjectHideFlags: 0
