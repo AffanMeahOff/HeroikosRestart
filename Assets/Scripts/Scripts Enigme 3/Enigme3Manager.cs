@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 
 public class Enigme3Manager : MonoBehaviour
@@ -41,14 +42,21 @@ public class Enigme3Manager : MonoBehaviour
         }
         else Debug.Log("Didn't find Waves");
         
+        if (Input.GetKey(KeyCode.J))
+        {
+            finished = true;
+        }
+        if (Waves != null) { finished = Waves.enigme3Finished; }
         if (finished)
         {
+            Debug.Log("finished");
             hehasfinished = true;
             sceneLoadingStarted = true;
             NetworkManager.Singleton.SceneManager.OnLoadComplete += OnSceneLoaded;
             NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
             Cursor.lockState = CursorLockMode.None;
             finished = false;
+            nextEnigme.SetActive(true);
 
         }
         Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
@@ -87,6 +95,7 @@ public class Enigme3Manager : MonoBehaviour
     }
     public void ok()
     {
+        nextEnigme.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 }
