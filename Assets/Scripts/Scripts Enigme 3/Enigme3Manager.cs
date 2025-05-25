@@ -27,7 +27,7 @@ public class Enigme3Manager : MonoBehaviour
     private void Start()
     {
         interaction_text = interaction_Info_UI.GetComponent<TMP_Text>();
-        Waves = GetComponent<Enigme3Waves>();
+        Waves = FindAnyObjectByType<Enigme3Waves>();
     }
 
     void Update()
@@ -35,10 +35,13 @@ public class Enigme3Manager : MonoBehaviour
         if (Waves != null) { finished = Waves.enigme3Finished; }
         if (finished)
         {
+            hehasfinished = true;
             sceneLoadingStarted = true;
             NetworkManager.Singleton.SceneManager.OnLoadComplete += OnSceneLoaded;
             NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
             Cursor.lockState = CursorLockMode.None;
+            finished = false;
+
         }
         Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -55,12 +58,6 @@ public class Enigme3Manager : MonoBehaviour
             {
                 interaction_Info_UI.SetActive(false);
             }
-        }
-        if (finished)
-        {
-            NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-            Cursor.lockState = CursorLockMode.None;
-            finished = false;
         }
     }
     private void OnSceneLoaded(ulong clientId, string sceneName, LoadSceneMode mode)

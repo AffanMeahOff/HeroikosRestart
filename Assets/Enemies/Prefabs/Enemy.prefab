@@ -2885,7 +2885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 2
-  distanceSeuil: 3
+  distanceSeuil: 4
   rotationSpeed: 360
   ischarger: 0
   damage: 20
