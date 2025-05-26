@@ -40,6 +40,7 @@ public class Enigme3Manager : MonoBehaviour
             finished = Waves.enigme3Finished;
             Debug.Log("Found Waves");
         }
+        if (Input.GetKeyDown(KeyCode.J)) finished = true;
         if (finished)
         {
             Debug.Log("finished");

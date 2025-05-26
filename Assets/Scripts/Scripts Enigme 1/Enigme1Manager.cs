@@ -41,6 +41,7 @@ public class Enigme1Manager : NetworkBehaviour
         if (sceneLoadingStarted) return;
 
         Counter = FindAnyObjectByType(typeof(Enigme1Counter)) as Enigme1Counter;
+        if (Input.GetKeyDown(KeyCode.L)) Counter.collected = 10;
         if (Counter != null && Counter.enigme1Finished)
         {
             hehasfinished = true;

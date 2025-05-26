@@ -1281,7 +1281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interaction_Info_UI: {fileID: 6294981593847667337}
-  endenigme2: {fileID: 0}
   Cam: {fileID: 5397300789229208588}
   hehasfinished: 0
   nextEnigme: {fileID: 5395645845990548072}
@@ -5091,6 +5090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  Dead: 0
 --- !u!1 &6016587483522704591
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,6 +5435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  Dead: 0
 --- !u!1 &6294981593847667337
 GameObject:
   m_ObjectHideFlags: 0
@@ -7064,6 +7065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+  Dead: 0
 --- !u!114 &6929978311705877878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8989,6 +8991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  Dead: 0
 --- !u!23 &3163778611836660175
 MeshRenderer:
   m_ObjectHideFlags: 0
