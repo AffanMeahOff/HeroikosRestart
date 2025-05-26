@@ -36,8 +36,9 @@ public class BossController : MonoBehaviour
     void Die()
     {
         isDead = true;
+
+        ShowEndScreen();
         Destroy(gameObject);
-        Invoke("ShowEndScreen", 4f);
     }
 
     void ShowEndScreen()
